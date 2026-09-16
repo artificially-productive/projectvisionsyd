@@ -438,12 +438,9 @@ class Component extends DCLogic {
   lock(on){ try{ document.body.style.overflow=on?'hidden':''; }catch(e){} }
   openContactModal(e, label, loc){
     if(e&&e.preventDefault) e.preventDefault();
-    if(typeof window!=='undefined'){ window.location.href='contact.html'; return; }
-    this.lock(true);
-    this.setState({contactModalOpen:true, contactSubmitted:false, drawer:false});
-    if(typeof window.trackEvent==='function'){
-      window.trackEvent('cta_click', { cta_label: label||'Talk to us about your Project', cta_location: loc||'capabilities_page' });
-    }
+    this.lock(false);
+    this.setState({drawer:false});
+    if(typeof window!=='undefined'){ window.location.href='contact.html'; }
   }
   closeContactModal(){ this.lock(false); this.setState({contactModalOpen:false, contactSubmitted:false}); }
   handleContactSubmit(e){

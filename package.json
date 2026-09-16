@@ -4,7 +4,10 @@
   "private": true,
   "description": "Project Vision — single-page marketing site (Editorial direction). Static, no build step.",
   "scripts": {
-    "dev": "npx --yes serve . -l 3000",
-    "start": "npx --yes serve . -l 3000"
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "googleapis": "^181.0.0"
   }
 }

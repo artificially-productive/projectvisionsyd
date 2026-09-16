@@ -82,8 +82,9 @@ module.exports = async function handler(req, res) {
     
     await sheets.spreadsheets.values.append({
       spreadsheetId: sheetId,
-      range: 'Sheet1!A:E',
+      range: 'A:E',
       valueInputOption: 'USER_ENTERED',
+      insertDataOption: 'INSERT_ROWS',
       requestBody: {
         values: [
           [timestamp, name || '', email || '', phone || '', details || '']

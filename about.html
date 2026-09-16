@@ -141,7 +141,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div style="font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#5b9bff;margin-bottom:14px;animation:pvUp .8s cubic-bezier(.16,1,.3,1) .1s both">About Projectvision</div>
     <h1 style="font-size:clamp(32px,5.5vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.08;color:#fff;max-width:24ch;animation:pvUp .8s cubic-bezier(.16,1,.3,1) .18s both">Founded on clear thinking, honest advice &amp; <span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#5b9bff">single-line responsibility.</span></h1>
     <div style="display:flex;align-items:center;gap:12px;margin-top:24px;animation:pvUp .7s cubic-bezier(.16,1,.3,1) .28s both">
-      <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(27,111,228,.8);border-radius:100px;padding:8px 16px">Established 1999</span>
       <span style="font-size:13px;color:rgba(255,255,255,.75);font-weight:500">Delivering across NSW &amp; interstate</span>
     </div>
   </div>
@@ -269,7 +268,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <h2 style="font-size:clamp(28px,5.5vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.08;color:#fff">Let's discuss your <span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:rgba(255,255,255,.55)">next site or project.</span></h2>
     <p data-rv="" data-rv-d="80" style="font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.7);line-height:1.6;max-width:48ch;margin:20px auto 36px">25 years of turning sites into returns. One conversation is all it takes.</p>
     <div data-rv="" data-rv-d="140" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
-      <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 32px;background:#0D1E35;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:15px;font-weight:600;border-radius:8px;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1B6FE4;transform:translateY(-3px);box-shadow:0 14px 30px rgba(13,30,53,.3)">Talk to us about your&nbsp;<span style="color:#5b9bff">Project</span> →</button>
+      <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 clamp(16px,3vw,32px);max-width:100%;background:#0D1E35;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:clamp(13px,3.5vw,15px);font-weight:600;border-radius:8px;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1B6FE4;transform:translateY(-3px);box-shadow:0 14px 30px rgba(13,30,53,.3)">Talk to us about your&nbsp;<span style="color:#5b9bff">Project</span> →</button>
     </div>
   </div>
 </section>
@@ -322,7 +321,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <a href="capabilities.html" onClick="{{ closeDrawer }}" style="display:flex;align-items:center;justify-content:space-between;padding:17px 0;border-bottom:1px solid #DDE4EE;font-size:18px;font-weight:600;color:#0D1E35;transition:color .25s" style-hover="color:#1B6FE4">Capabilities <span style="color:#1B6FE4">→</span></a>
     <a href="index.html#projects" onClick="{{ closeDrawer }}" style="display:flex;align-items:center;justify-content:space-between;padding:17px 0;border-bottom:1px solid #DDE4EE;font-size:18px;font-weight:600;color:#0D1E35;transition:color .25s" style-hover="color:#1B6FE4">Projects <span style="color:#1B6FE4">→</span></a>
     <button onClick="{{ openContactModal }}" style="display:flex;align-items:center;justify-content:space-between;padding:17px 0;border-bottom:1px solid #DDE4EE;font-size:18px;font-weight:600;color:#0D1E35;width:100%;text-align:left;transition:color .25s" style-hover="color:#1B6FE4">Contact Us <span style="color:#1B6FE4">→</span></button>
-    <button onClick="{{ openContactModal }}" style="display:flex;align-items:center;justify-content:center;margin-top:20px;height:56px;width:100%;background:#1B6FE4;color:#fff;border-radius:8px;font-size:15px;font-weight:700;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1559bd;transform:translateY(-2px);box-shadow:0 12px 26px rgba(27,111,228,.36)">Talk to us about your&nbsp;<span style="color:#BBD4FF">Project</span></button>
+    <button onClick="{{ openContactModal }}" style="display:flex;align-items:center;justify-content:center;margin-top:20px;height:56px;width:100%;padding:0 12px;background:#1B6FE4;color:#fff;border-radius:8px;font-size:clamp(13px,3.6vw,15px);font-weight:700;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1559bd;transform:translateY(-2px);box-shadow:0 12px 26px rgba(27,111,228,.36)">Talk to us about your&nbsp;<span style="color:#BBD4FF">Project</span></button>
   </nav>
 </div>
 

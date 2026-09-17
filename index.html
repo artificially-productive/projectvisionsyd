@@ -119,7 +119,6 @@
   function trackEvent(eventName, eventParams) {
     window.dataLayer.push(Object.assign({ event: eventName, timestamp: new Date().toISOString() }, eventParams || {}));
   }
-  // GA4 / GTM Container Slot: Insert <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> here when ready.
 </script>
 
 <script src="./support.js"></script>
@@ -539,7 +538,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           <div style="width:{{ sectorIconSize }};height:{{ sectorIconSize }};border-radius:50%;border:1px solid rgba(13,30,53,.16);background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 4px 14px rgba(13,30,53,.06);padding:10px">
             <img src="{{ sec.icon }}" alt="{{ sec.name }}" style="width:100%;height:100%;object-fit:contain">
           </div>
-          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(14px,2.1vw,20px);font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25">{{ sec.name }}</div>
+          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(14px,2.1vw,20px);font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25;animation:pvRolePulse 5s ease-in-out {{ sec.pulseDelay }} infinite">{{ sec.name }}</div>
           <div style="font-size:13px;color:#55657A;margin-top:4px;line-height:1.5;display:{{ sectorDescDisplay }}">{{ sec.desc }}</div>
         </div>
       </sc-for>
@@ -550,7 +549,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           <div style="width:{{ sectorIconSize }};height:{{ sectorIconSize }};border-radius:50%;border:1px solid rgba(13,30,53,.16);background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 4px 14px rgba(13,30,53,.06);padding:10px">
             <img src="{{ sec.icon }}" alt="{{ sec.name }}" style="width:100%;height:100%;object-fit:contain">
           </div>
-          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(14px,2.1vw,20px);font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25">{{ sec.name }}</div>
+          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(14px,2.1vw,20px);font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25;animation:pvRolePulse 5s ease-in-out {{ sec.pulseDelay }} infinite">{{ sec.name }}</div>
           <div style="font-size:13px;color:#55657A;margin-top:4px;line-height:1.5;display:{{ sectorDescDisplay }}">{{ sec.desc }}</div>
         </div>
       </sc-for>
@@ -563,7 +562,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           <div style="width:{{ sectorIconSize }};height:{{ sectorIconSize }};border-radius:50%;border:1px solid rgba(13,30,53,.16);background:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:10px;box-shadow:0 4px 14px rgba(13,30,53,.06);padding:8px">
             <img src="{{ sec.icon }}" alt="{{ sec.name }}" style="width:100%;height:100%;object-fit:contain">
           </div>
-          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25">{{ sec.name }}</div>
+          <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:-.01em;color:#0D1E35;line-height:1.25;animation:pvRolePulse 5s ease-in-out {{ sec.pulseDelay }} infinite">{{ sec.name }}</div>
           <div style="font-size:11.5px;color:#55657A;margin-top:4px;line-height:1.35">{{ sec.desc }}</div>
         </div>
       </sc-for>
@@ -953,7 +952,7 @@ class Component extends DCLogic {
       {name:'Education',desc:'Schools, campuses',icon:'assets/Icons/Education.png'},
       {name:'Community',desc:'Aged care, faith, civic halls',icon:'assets/Icons/Community.png'},
       {name:'Civic',desc:'Public infrastructure',icon:'assets/Icons/Civic.png'}
-    ].map((s,i)=>({...s,path:SECPATHS[i]}));
+    ].map((s,i)=>({...s,path:SECPATHS[i],pulseDelay:(i*0.5)+'s'}));
     const sectorsLoop=[...SECTORS_A,...SECTORS_A];
     const modalP=st.modalId?projects.find(p=>p.id===st.modalId):null;
     let modal=null;

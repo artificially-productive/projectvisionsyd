@@ -372,7 +372,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div style="position:absolute;inset:0;background-image:url('assets/nolli.png');background-size:150px 150px;opacity:.14;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 120% 130% at 12% 100%,#000 0%,transparent 66%);mask-image:radial-gradient(ellipse 120% 130% at 12% 100%,#000 0%,transparent 66%);pointer-events:none"></div>
   <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center;position:relative;z-index:2">
     <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#5b9bff;margin-bottom:20px"><span style="display:block;width:14px;height:1px;background:#5b9bff"></span>Our Philosophy</div>
-    <div data-rv="" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,3.2vw,30px);color:#0D1E35;line-height:1.4;margin-bottom:14px;background:#fff;padding:clamp(28px,4vw,48px);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)">"Integrated expertise — fees tied to <span style="font-style:normal;font-family:'Saira',sans-serif;font-weight:700;color:#1B6FE4">your returns</span>, not our hours."</div>
+    <div data-rv="" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,3.2vw,30px);color:#0D1E35;line-height:1.4;margin-bottom:14px;background:#fff;padding:clamp(28px,4vw,48px);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)">"Integrated expertise — <span style="font-style:normal;font-family:'Saira',sans-serif;font-weight:700;color:#1B6FE4">built around your outcome</span>, not our hours."</div>
   </div>
 </section>
 
@@ -510,12 +510,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div style="max-width:1320px;margin:0 auto">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">02 — Approach</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);justify-content:space-between;align-items:center">
-      <h2 style="flex:1 1 360px;font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:20ch"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Integrated expertise — fees tied to </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">your returns</span>.</h2>
+      <h2 style="flex:1 1 360px;font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:20ch"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Integrated expertise — </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">built around your outcome.</span></h2>
       <div style="flex:1 1 320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:clamp(16px,2.2vw,28px)">
         <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
           <div style="position:relative">
             <span style="display:block;width:14px;height:2px;background:{{ s.redTick }};margin-bottom:8px"></span>
-            <div style="font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1;color:#0D1E35">{{ s.v }}</div>
+            <div style="font-size:clamp(17px,2vw,21px);font-weight:800;letter-spacing:-.02em;line-height:1.2;color:#0D1E35;min-height:2.4em;display:flex;align-items:flex-end">{{ s.v }}</div>
             <div style="margin-top:6px;font-size:12px;color:#55657A">{{ s.l }}</div>
           </div>
         </sc-for>
@@ -612,9 +612,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <!-- CONTACT B -->
 <section id="contact" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);background:#F7F6F3;border-top:1px solid rgba(13,30,53,.1)">
   <div style="max-width:1320px;margin:0 auto">
-    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:baseline;margin-bottom:clamp(30px,4vw,48px)">
+    <div style="margin-bottom:clamp(30px,4vw,48px)">
       <h2 style="font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:20ch"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Your site is worth more </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">than you think.</span></h2>
-      <div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#55657A">Let's Talk</div>
     </div>
     <div style="border-top:1px solid rgba(13,30,53,.14);padding-top:clamp(22px,3vw,36px);display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:center;justify-content:space-between">
       <p style="flex:1 1 340px;font-size:clamp(15px,1.7vw,18px);color:#3a4a5c;line-height:1.6;max-width:44ch">25 years of turning sites into returns. One conversation is all it takes.</p>
@@ -862,9 +861,9 @@ class Component extends DCLogic {
         {id:'rydalmere',name:'375 Victoria Rd, Rydalmere',tag:'Development, Design & Construction'},
         {id:'narellan',name:'Narellan Town Centre',tag:'Tenancy Coordination & Petrol Station PM'},
         {id:'oranpark',name:'Oran Park Town Centre',tag:'Tenancy Coordination & Delivery'},
-        {id:'eg_oranpark',name:'EG Oran Park – Petrol & Co-Tenancy',tag:'Multi-Tenancy Retail Precinct Delivery'},
+        {id:'eg_oranpark',name:'EG Oran Park – Petrol & QSR',tag:'Multi-Tenancy Retail Precinct Delivery'},
         {id:'petrol_baringa',name:'Woolworths Petrol Baringa',tag:'New Service Station Development'},
-        {id:'petrol_epping',name:'Woolworths Petrol Epping',tag:'New Service Station Development'},
+        {id:'petrol_epping',name:'Woolworths Petrol Epping',tag:'Architecture'},
         {id:'petrol_gregory_hills',name:'Woolworths Petrol Gregory Hills',tag:'New Service Station Development'}
       ];
       const p=RAW.find(x=>x.id===id);
@@ -890,9 +889,9 @@ class Component extends DCLogic {
       {id:'rydalmere',name:'375 Victoria Rd, Rydalmere',loc:'Rydalmere, NSW',tag:'Development, Design & Construction',status:'done',hook:'10 townhouses over basement parking. DA to handover.',desc:'Development, design and construction of a multi-dwelling residential development comprising 10 townhouses over basement car parking. Projectvision provided an integrated approach across the development, design and construction stages, delivering a coordinated residential outcome from concept through to completion.',imgs:['assets/proj-rydalmere-1.jpg','assets/proj-rydalmere-2.jpg','assets/proj-rydalmere-3.jpg']},
       {id:'narellan',name:'Narellan Town Centre',loc:'Narellan, NSW',tag:'Tenancy Coordination & Petrol Station PM',status:'done',hook:'120+ specialty stores & major retailers coordinated.',desc:'Projectvision provided tenancy coordination and petrol station project management for Narellan Town Centre, a major retail and mixed-use development in South-West Sydney. Our team coordinated tenancy fit outs across more than 120 specialty stores and major retailers, working closely with retailers, authorities and the builder to support a high-quality, coordinated opening delivered on program.',imgs:['assets/proj-narellan-1.jpg','assets/proj-narellan-2.jpg','assets/proj-narellan-3.jpg']},
       {id:'oranpark',name:'Oran Park Town Centre',loc:'Oran Park, NSW',tag:'Tenancy Coordination & Delivery',status:'done',hook:'Nearly 60 specialty tenancies delivered on time.',desc:'Projectvision provided tenancy coordination for the latest expansion of the Oran Park Town Centre retail podium, working alongside Greenfields Development Company and the wider project team. Our team managed the delivery of nearly 60 specialty tenancies from lease commencement through to opening, coordinating stakeholders to support a smooth and timely retail launch.',imgs:['assets/proj-oranpark-1.jpg','assets/proj-oranpark-2.jpg','assets/proj-oranpark-3.jpg']},
-      {id:'eg_oranpark',name:'EG Oran Park – Petrol & Co-Tenancy',loc:'Oran Park, NSW',tag:'Multi-Tenancy Retail Precinct Delivery',status:'done',hook:'Multi-tenancy retail precinct anchored by EG Ampol.',desc:"Delivery of a multi-tenancy retail precinct anchored by an EG Ampol service station, alongside major food and beverage operators including Guzman y Gomez, Hungry Jack's, KFC and Starbucks. Projectvision coordinated tenancies across the precinct, supporting the seamless integration of fuel, dining and convenience uses.",imgs:['assets/proj-petrol-1.jpg','assets/proj-petrol-2.jpg','assets/proj-petrol-3.jpg']},
+      {id:'eg_oranpark',name:'EG Oran Park – Petrol & QSR',loc:'Oran Park, NSW',tag:'Multi-Tenancy Retail Precinct Delivery',status:'done',hook:'Multi-tenancy retail precinct anchored by EG Ampol.',desc:"Delivery of a multi-tenancy retail precinct anchored by an EG Ampol service station, alongside major food and beverage operators including Guzman y Gomez, Hungry Jack's, KFC and Starbucks. Projectvision coordinated tenancies across the precinct, supporting the seamless integration of fuel, dining and convenience uses.",imgs:['assets/proj-petrol-1.jpg','assets/proj-petrol-2.jpg','assets/proj-petrol-3.jpg']},
       {id:'petrol_baringa',name:'Woolworths Petrol Baringa',loc:'Baringa, QLD',tag:'New Service Station Development',status:'done',hook:'Ground-up development of a new EG Ampol service station.',desc:'Ground-up development of a new EG Ampol service station in Baringa. The project included an Amplify Premium Fuels forecourt, co-located Oporto drive-thru, Fly Thru car wash and integrated convenience retail facilities.',imgs:['assets/proj-petrol-1.jpg','assets/proj-petrol-2.jpg','assets/proj-petrol-3.jpg']},
-      {id:'petrol_epping',name:'Woolworths Petrol Epping',loc:'Epping, VIC',tag:'New Service Station Development',status:'done',hook:'New EG Ampol service station with drive-thru retail.',desc:'Ground-up development of a new EG Ampol service station in Epping. The project included a multi-bay fuel forecourt alongside a Pizza Hut drive-thru and Caffé Aurora barista drive-thru, integrating fuel, food and convenience retail within the precinct.',imgs:['assets/proj-petrol-2.jpg','assets/proj-petrol-3.jpg','assets/proj-petrol-1.jpg']},
+      {id:'petrol_epping',name:'Woolworths Petrol Epping',loc:'Epping, VIC',tag:'Architecture',status:'done',hook:'New EG Ampol service station with drive-thru retail.',desc:'Ground-up development of a new EG Ampol service station in Epping. The project included a multi-bay fuel forecourt alongside a Pizza Hut drive-thru and Caffé Aurora barista drive-thru, integrating fuel, food and convenience retail within the precinct.',imgs:['assets/proj-petrol-2.jpg','assets/proj-petrol-3.jpg','assets/proj-petrol-1.jpg']},
       {id:'petrol_gregory_hills',name:'Woolworths Petrol Gregory Hills',loc:'Gregory Hills, NSW',tag:'New Service Station Development',status:'done',hook:'Ground-up development of EG Caltex service station.',desc:"Ground-up development of a new EG Caltex service station in Gregory Hills. The project included a multi-bay fuel forecourt, timber-clad convenience store, café-quality coffee facilities and an Oliver's Real Food to Go offering.",imgs:['assets/proj-petrol-3.jpg','assets/proj-petrol-1.jpg','assets/proj-petrol-2.jpg']}
     ];
     const bMono=this.props.bMonochrome??false;
@@ -1058,7 +1057,7 @@ class Component extends DCLogic {
         {v:'25+',l:'Years in business',target:'',suffix:'',redTick:'transparent'},
         {v:'1 Team',l:'Dev · Design · Build',target:'',suffix:'',redTick:'transparent'},
         {v:'1.1M',l:'sqm FSR delivered',target:'1.1',suffix:'M',redTick:'transparent'},
-        {v:'Fees = %',l:'Your margin',target:'',suffix:'',redTick:'transparent'}
+        {v:'NSW & Interstate',l:'Across Australia',target:'',suffix:'',redTick:'transparent'}
       ],
       modal, modalOpen:!!modal, closeModal:()=>this.closeModal(), noop:(e)=>{ if(e&&e.stopPropagation) e.stopPropagation(); },
       contactModalOpen: !!st.contactModalOpen,

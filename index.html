@@ -153,277 +153,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   [data-rv]{opacity:1 !important}
   [data-rv].pv-in{animation:none !important}
 }
-@media print{[data-pv-drawer],[data-pv-switcher]{display:none!important}#top{min-height:auto!important;height:100vh!important}}
+@media print{[data-pv-drawer]{display:none!important}#top{min-height:auto!important;height:100vh!important}}
 </style>
 </helmet>
 
 <div style="position:relative;width:100%">
 <div data-progress=""></div>
 
-<!-- ============ VIEW A — SIGNATURE ============ -->
-<sc-if value="{{ viewA }}" hint-placeholder-val="{{ true }}">
-<div>
-
-<!-- NAV -->
-<header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 clamp(16px,4vw,52px);background:{{ navBg }};backdrop-filter:blur(24px) saturate(1.8);box-shadow:{{ navShadow }};transition:background .4s,box-shadow .4s">
-  <nav style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <a href="#top" style="display:flex;align-items:center;line-height:1"><img src="assets/logo.png" alt="Project Vision" width="200" height="38" style="height:clamp(32px,2.8vw,38px);width:auto;display:block"></a>
-    <button onClick="{{ toggleDrawer }}" aria-label="Open menu" style="flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;background:none;border:none">
-      <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};transform:{{ hbTop }};transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s"></span>
-      <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};opacity:{{ hbMid }};transition:opacity .2s,background .35s"></span>
-      <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};transform:{{ hbBot }};transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s"></span>
-    </button>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section id="top" style="position:relative;min-height:100vh;min-height:100dvh;min-height:100svh;display:flex;align-items:center;justify-content:center;background:#09152B;overflow:hidden">
-  <div style="position:absolute;inset:0">
-    <sc-for list="{{ heroLayers }}" as="layer" hint-placeholder-count="1">
-      <div style="position:absolute;inset:0;background-size:cover;background-position:center 38%;transition:opacity 1.7s cubic-bezier(.16,1,.3,1),transform 1.7s cubic-bezier(.16,1,.3,1);background-image:url('{{ layer.src }}');opacity:{{ layer.op }};transform:{{ layer.tf }};animation:{{ layer.anim }};filter:blur(4px) scale(1.04)"></div>
-    </sc-for>
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,21,43,.50) 0%,rgba(9,21,43,.30) 38%,rgba(9,21,43,.82) 100%)"></div>
-  </div>
-  <div style="position:relative;z-index:2;text-align:center;padding:0 24px;max-width:760px;display:flex;flex-direction:column;align-items:center">
-    <div style="display:flex;justify-content:center;width:100%;margin-bottom:26px;animation:pvUp .8s cubic-bezier(.16,1,.3,1) .05s both"><img src="assets/logo.png" alt="Project Vision" width="280" height="76" style="height:clamp(44px,7.5vw,76px);width:auto;max-width:92%;object-fit:contain;display:inline-block"></div>
-    <div style="animation:pvUp .8s cubic-bezier(.16,1,.3,1) .18s both;margin-bottom:6px">
-      <div style="font-size:12px;font-weight:800;letter-spacing:.42em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:6px;text-shadow:0 1px 6px rgba(0,0,0,.4)">Established</div>
-      <div style="font-family:'Saira',sans-serif;font-size:clamp(64px,14vw,120px);font-weight:900;letter-spacing:-.04em;color:#fff;line-height:.95;text-shadow:0 4px 30px rgba(0,0,0,.6)">1999</div>
-    </div>
-    <div style="width:40px;height:2px;background:#1B6FE4;margin:22px 0;animation:pvUp .7s cubic-bezier(.16,1,.3,1) .32s both"></div>
-    <h1 style="margin:0;font-size:clamp(12px,1.6vw,14px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5);animation:pvUp .7s cubic-bezier(.16,1,.3,1) .42s both">Plan &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Design &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Deliver{{ deliverSep }}Together</h1>
-    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;animation:pvUp .7s cubic-bezier(.16,1,.3,1) .52s both">
-      <a href="#projects" onClick="trackEvent('cta_click', { cta_label: 'View Our Work', cta_location: 'hero_signature' })" style="flex:none;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 clamp(16px,3vw,32px);width:clamp(260px,85vw,290px);max-width:100%;border-radius:8px;background:#1B6FE4;color:#fff;font-size:clamp(13.5px,3.6vw,15px);font-weight:600;letter-spacing:.01em;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1559bd;transform:translateY(-3px);box-shadow:0 14px 30px rgba(27,111,228,.42)">View Our Work →</a>
-      <button onClick="{{ openContactModal }}" style="flex:none;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 clamp(12px,3vw,32px);width:clamp(260px,85vw,290px);max-width:100%;border-radius:8px;background:#0D1E35;border:1px solid rgba(255,255,255,.25);color:#fff;font-size:clamp(13px,3.5vw,15px);font-weight:600;letter-spacing:.01em;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1B6FE4;transform:translateY(-3px);box-shadow:0 14px 30px rgba(13,30,53,.4)">Talk to us about your&nbsp;<span style="color:#5b9bff">Project</span> →</button>
-    </div>
-  </div>
-  <div style="position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:6px">
-    <sc-for list="{{ heroDots }}" as="dot" hint-placeholder-count="5">
-      <button onClick="{{ dot.go }}" aria-label="Slide" style="height:2px;width:{{ dot.w }};border-radius:100px;background:{{ dot.bg }};transition:all .4s"></button>
-    </sc-for>
-  </div>
-</section>
-
-<!-- WHO WE ARE -->
-<section id="who" style="background-color:#fff;background-image:radial-gradient(circle at 18% 28%,rgba(27,111,228,.11),transparent 46%),radial-gradient(circle at 84% 74%,rgba(118,136,166,.13),transparent 46%),radial-gradient(circle at 60% 8%,rgba(91,155,255,.10),transparent 42%);background-size:175% 175%;animation:pvDrift 42s ease-in-out infinite;padding:clamp(56px,9vw,90px) 0 clamp(40px,6vw,64px)">
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
-   <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,60px);align-items:flex-start">
-    <div style="flex:1 1 300px;min-width:280px;align-self:flex-start;position:{{ whoIntroPos }};top:118px">
-      <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4;margin-bottom:12px"><span style="display:block;width:14px;height:1px;background:#1B6FE4"></span>Who We Are</div>
-      <h2 data-rv="" style="font-size:clamp(26px,5vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.06;color:#0D1E35;margin-bottom:18px;max-width:12ch">Developers. Architects. Builders.</h2>
-      <p data-rv="" data-rv-d="80" style="font-size:clamp(15px,1.8vw,17px);color:#55657A;line-height:1.7;max-width:42ch;margin-bottom:22px">Three standalone disciplines. Engage us as developers, as architects, or as builders — each works fully on its own. Or bring us in for all three together, under one accountable line.</p>
-      <div data-rv="" data-rv-d="140" style="display:flex;flex-wrap:wrap;gap:8px">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:8px 15px">Plan</span>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:8px 15px">Design</span>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:8px 15px">Deliver</span>
-      </div>
-    </div>
-    <div style="flex:1 1 460px;min-width:300px;display:flex;flex-direction:column;gap:clamp(18px,2.5vw,26px)">
-
-      <!-- card 01 -->
-      <div style="position:sticky;top:90px;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#10213C 0%,#0B1830 100%);box-shadow:0 22px 50px rgba(9,21,43,.28);padding:clamp(26px,4vw,40px);min-height:clamp(210px,28vw,250px);display:flex;flex-direction:column;justify-content:flex-end">
-        <div style="position:absolute;top:clamp(-10px,1vw,4px);right:clamp(8px,2vw,26px);font-family:'Playfair Display',serif;font-size:clamp(120px,18vw,190px);font-weight:500;color:rgba(91,155,255,.12);line-height:1;pointer-events:none">01</div>
-        <div data-rv="" style="display:flex;align-items:center;gap:11px;margin-bottom:auto">
-          <div style="width:42px;height:42px;border-radius:12px;background:rgba(91,155,255,.16);display:flex;align-items:center;justify-content:center;color:#5b9bff"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 00-4 0v2M2 11h20"></path></svg></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5)">Plan</div>
-        </div>
-        <div data-rv="" data-rv-d="80" style="font-size:clamp(26px,4.4vw,40px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.04;margin-top:clamp(28px,4vw,40px)">Developers</div>
-        <div data-rv="" data-rv-d="160" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.2vw,22px);color:#5b9bff;line-height:1.35;margin-top:8px">We see land as a balance sheet.</div>
-      </div>
-
-      <!-- card 02 -->
-      <div style="position:sticky;top:108px;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#13294A 0%,#0D1E38 100%);box-shadow:0 22px 50px rgba(9,21,43,.3);padding:clamp(26px,4vw,40px);min-height:clamp(210px,28vw,250px);display:flex;flex-direction:column;justify-content:flex-end">
-        <div style="position:absolute;top:clamp(-10px,1vw,4px);right:clamp(8px,2vw,26px);font-family:'Playfair Display',serif;font-size:clamp(120px,18vw,190px);font-weight:500;color:rgba(91,155,255,.12);line-height:1;pointer-events:none">02</div>
-        <div data-rv="" style="display:flex;align-items:center;gap:11px;margin-bottom:auto">
-          <div style="width:42px;height:42px;border-radius:12px;background:rgba(91,155,255,.16);display:flex;align-items:center;justify-content:center;color:#5b9bff"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="3" x2="12" y2="21"></line><line x1="3" y1="12" x2="21" y2="12"></line><circle cx="12" cy="12" r="3"></circle></svg></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.5)">Design</div>
-        </div>
-        <div data-rv="" data-rv-d="80" style="font-size:clamp(26px,4.4vw,40px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.04;margin-top:clamp(28px,4vw,40px)">Architects</div>
-        <div data-rv="" data-rv-d="160" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.2vw,22px);color:#5b9bff;line-height:1.35;margin-top:8px">We design for yield, not just aesthetics.</div>
-      </div>
-
-      <!-- card 03 -->
-      <div style="position:sticky;top:126px;border-radius:22px;overflow:hidden;background:linear-gradient(145deg,#1B6FE4 0%,#1559BD 100%);box-shadow:0 22px 50px rgba(27,111,228,.34);padding:clamp(26px,4vw,40px);min-height:clamp(210px,28vw,250px);display:flex;flex-direction:column;justify-content:flex-end">
-        <div style="position:absolute;top:clamp(-10px,1vw,4px);right:clamp(8px,2vw,26px);font-family:'Playfair Display',serif;font-size:clamp(120px,18vw,190px);font-weight:500;color:rgba(255,255,255,.16);line-height:1;pointer-events:none">03</div>
-        <div data-rv="" style="display:flex;align-items:center;gap:11px;margin-bottom:auto">
-          <div style="width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:#fff"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 20h20M4 20V9l8-6 8 6v11"></path><path d="M10 20v-6h4v6"></path></svg></div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.7)">Deliver</div>
-        </div>
-        <div data-rv="" data-rv-d="80" style="font-size:clamp(26px,4.4vw,40px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.04;margin-top:clamp(28px,4vw,40px)">Builders</div>
-        <div data-rv="" data-rv-d="160" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.2vw,22px);color:rgba(255,255,255,.92);line-height:1.35;margin-top:8px">We finish what we design.</div>
-      </div>
-
-    </div>
-   </div>
-  </div>
-</section>
-
-<!-- PLAQUE -->
-<div style="background-color:#fff;background-image:radial-gradient(circle at 22% 30%,rgba(27,111,228,.10),transparent 48%),radial-gradient(circle at 80% 70%,rgba(118,136,166,.12),transparent 48%);background-size:180% 180%;animation:pvDrift 46s ease-in-out infinite;padding:clamp(28px,5vw,48px) 0">
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
-    <div data-rv="" style="background:#fff;border-radius:16px;padding:clamp(26px,3.5vw,40px) clamp(24px,3.5vw,44px);box-shadow:0 8px 28px rgba(13,30,53,.08);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(20px,3vw,40px)">
-      <div style="flex:1 1 320px">
-        <div style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#55657A;margin-bottom:10px">Core Service</div>
-        <h2 style="font-size:clamp(20px,2.8vw,28px);font-weight:700;letter-spacing:-.025em;color:#0D1E35;line-height:1.25">Development Management with <span style="color:#1B6FE4">in-house</span> Architects &amp; Builders</h2>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-        <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:9px 16px">Plan</span>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:9px 16px">Design</span>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#1B6FE4;background:#EAF1FD;border-radius:100px;padding:9px 16px">Deliver</span>
-        <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:#0D1E35;border-radius:100px;padding:9px 16px">Together</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- STATS -->
-<section style="padding:clamp(56px,8vw,90px) 0 clamp(40px,6vw,64px)">
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(24px,4vw,48px)">
-      <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
-        <div data-rv="" style="border-left:2px solid #1B6FE4;padding-left:20px">
-          <div data-countup data-target="{{ s.target }}" data-suffix="{{ s.suffix }}" style="font-size:clamp(26px,4.2vw,40px);font-weight:800;letter-spacing:-.04em;color:#1B6FE4;line-height:1;margin-bottom:6px">{{ s.v }}</div>
-          <div style="font-size:clamp(12px,1.5vw,14px);color:#55657A;line-height:1.45">{{ s.l }}</div>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED WORK HERO -->
-<section id="projects" style="padding:0 0 clamp(48px,7vw,80px)">
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
-    <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4;margin-bottom:12px"><span style="display:block;width:14px;height:1px;background:#1B6FE4"></span>What We've Built</div>
-    <h2 data-rv="" style="font-size:clamp(24px,4.6vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.08;color:#0D1E35;margin-bottom:clamp(24px,3.5vw,40px)">Places we've made <span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">profitable.</span></h2>
-
-    <div style="border-radius:24px;overflow:hidden;background:#09152B;box-shadow:0 28px 70px rgba(9,21,43,.32);position:relative">
-      <div style="position:absolute;inset:0">
-        <sc-for list="{{ projects }}" as="p" hint-placeholder-count="1">
-          <div style="position:absolute;inset:0;background-image:url('{{ p.img }}');background-size:cover;background-position:center;transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1);opacity:{{ p.layerOp }};transform:{{ p.layerScale }};filter:{{ p.bFilter }}"></div>
-        </sc-for>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,21,43,.18) 0%,rgba(9,21,43,.88) 100%)"></div>
-      </div>
-      <div style="position:relative;z-index:2;padding:clamp(28px,4.5vw,52px);min-height:clamp(420px,50vw,540px);display:flex;flex-direction:column;justify-content:space-between">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-          <span style="padding:7px 14px;border-radius:100px;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:{{ proj.badgeBg }};color:{{ proj.badgeColor }};backdrop-filter:blur(6px)">{{ proj.statusLabel }}</span>
-          <span style="flex:none;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.9);background:rgba(9,21,43,.36);backdrop-filter:blur(6px);padding:7px 13px;border-radius:100px">{{ projCounter }}</span>
-        </div>
-        <div>
-          <div style="max-width:560px">
-            <div style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:10px">{{ proj.tag }}</div>
-            <div style="font-size:clamp(24px,4vw,46px);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.02;text-shadow:0 2px 18px rgba(0,0,0,.45)">{{ proj.name }}</div>
-            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,2vw,21px);color:rgba(255,255,255,.92);line-height:1.4;margin-top:12px;max-width:34ch;text-shadow:0 1px 10px rgba(0,0,0,.45)">{{ proj.hook }}</div>
-            <button onClick="{{ proj.open }}" style="display:inline-flex;align-items:center;gap:7px;margin-top:clamp(16px,2.4vw,24px);font-size:14px;font-weight:700;color:#0D1E35;background:#fff;border-radius:100px;padding:13px 25px;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.32);color:#1B6FE4">View details →</button>
-          </div>
-          <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:20px">
-            <button onClick="{{ prevProj }}" aria-label="Previous" style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;backdrop-filter:blur(6px);transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#fff;color:#1B6FE4;transform:translateY(-2px)">←</button>
-            <button onClick="{{ nextProj }}" aria-label="Next" style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;backdrop-filter:blur(6px);transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#fff;color:#1B6FE4;transform:translateY(-2px)">→</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- project carousel thumbnails -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:16px">
-      <sc-for list="{{ projects }}" as="t" hint-placeholder-count="7">
-        <button onClick="{{ t.select }}" style="border-radius:12px;padding:12px;background:#fff;border:2px solid {{ t.thumbBd }};text-align:left;cursor:pointer;transition:all .3s;box-shadow:0 4px 14px rgba(13,30,53,.06)" style-hover="transform:translateY(-2px)">
-          <div style="font-size:10.5px;font-weight:700;color:{{ t.numColor }}">{{ t.num }}</div>
-          <div style="font-size:11px;font-weight:600;letter-spacing:-.01em;color:{{ t.nameColor }};margin-top:7px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s">{{ t.name }}</div>
-        </button>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
-<!-- SECTORS -->
-<section style="padding:clamp(56px,8vw,90px) 0 clamp(40px,6vw,64px);background:#09152B;color:#fff;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background-image:url('assets/nolli.png');background-size:300px 300px;opacity:.12;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 95% 130% at 10% 100%,#000 0%,transparent 60%);mask-image:radial-gradient(ellipse 95% 130% at 10% 100%,#000 0%,transparent 60%);pointer-events:none"></div>
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px);position:relative;z-index:2">
-    <div style="display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(32px,5vw,56px)">
-      <div>
-        <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#5b9bff;margin-bottom:12px"><span style="display:block;width:14px;height:1px;background:#5b9bff"></span>Sectors We Serve</div>
-        <h2 style="font-size:clamp(22px,3.2vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1.18;color:#fff;max-width:20ch">Development returns of up to <span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#5b9bff">2200%</span> on equity.</h2>
-      </div>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
-      <sc-for list="{{ sectors }}" as="sec" hint-placeholder-count="6">
-        <div data-rv="" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 26px;backdrop-filter:blur(6px)">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.16em;color:#5b9bff;margin-bottom:10px">{{ sec.n }}</div>
-          <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:6px">{{ sec.name }}</div>
-          <div style="font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.55">{{ sec.desc }}</div>
-        </div>
-      </sc-for>
-    </div>
-  </div>
-</section>
-
-<!-- SECTOR MARQUEE -->
-<div style="background:#060E1E;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);overflow:hidden;padding:16px 0">
-  <div class="pv-tick" style="display:flex;white-space:nowrap;animation:pvTick 36s linear infinite;width:max-content">
-    <sc-for list="{{ sectorsLoop }}" as="sec" hint-placeholder-count="12">
-      <span style="display:inline-flex;align-items:center;gap:18px;padding:0 24px;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.65)"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#1B6FE4"></span>{{ sec.name }}</span>
-    </sc-for>
-  </div>
-</div>
-
-<!-- TESTIMONIAL / APPROACH BANNER -->
-<section style="padding:clamp(60px,9vw,100px) 0;background:#0D1E35;color:#fff;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background-image:url('assets/nolli.png');background-size:150px 150px;opacity:.14;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 120% 130% at 12% 100%,#000 0%,transparent 66%);mask-image:radial-gradient(ellipse 120% 130% at 12% 100%,#000 0%,transparent 66%);pointer-events:none"></div>
-  <div style="max-width:960px;margin:0 auto;padding:0 clamp(20px,5vw,40px);text-align:center;position:relative;z-index:2">
-    <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#5b9bff;margin-bottom:20px"><span style="display:block;width:14px;height:1px;background:#5b9bff"></span>Our Philosophy</div>
-    <div data-rv="" style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,3.2vw,30px);color:#0D1E35;line-height:1.4;margin-bottom:14px;background:#fff;padding:clamp(28px,4vw,48px);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.3)">"Integrated expertise — <span style="font-style:normal;font-family:'Saira',sans-serif;font-weight:700;color:#1B6FE4">built around your outcome</span>, not our hours."</div>
-  </div>
-</section>
-
-<!-- CONTACT CTA -->
-<section id="contact" style="padding:clamp(64px,10vw,110px) 0;background:#09152B;color:#fff;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:-8%;background-image:url('assets/emboss-blue.png');background-size:420px auto;opacity:.3;mix-blend-mode:soft-light;animation:pvDrift 34s ease-in-out infinite;pointer-events:none"></div>
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px);position:relative;z-index:2;text-align:center">
-    <div data-rv="" style="display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#5b9bff;margin-bottom:16px"><span style="display:block;width:14px;height:1px;background:#5b9bff"></span>Let's Talk</div>
-    <h2 style="font-size:clamp(28px,5.5vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.08;color:#fff">Your site is worth more <span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:rgba(255,255,255,.55)">than you think.</span></h2>
-    <p data-rv="" data-rv-d="80" style="font-size:clamp(15px,2vw,19px);color:rgba(255,255,255,.7);line-height:1.6;max-width:48ch;margin:20px auto 36px">25 years of turning sites into returns. One conversation is all it takes.</p>
-    <div data-rv="" data-rv-d="140" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
-      <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 clamp(16px,3vw,36px);max-width:100%;background:#1B6FE4;color:#fff;font-size:clamp(13px,3.5vw,15px);font-weight:700;border-radius:8px;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1559bd;transform:translateY(-3px) scale(1.02);box-shadow:0 14px 30px rgba(27,111,228,.42)">Talk to us about your&nbsp;<span style="color:#BBD4FF">Project</span> →</button>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer style="background:#060E1E;color:#fff;padding:clamp(48px,7vw,80px) 0 32px;border-top:1px solid rgba(255,255,255,.08)">
-  <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,40px)">
-    <div style="display:flex;flex-wrap:wrap;gap:40px 64px;justify-content:space-between;margin-bottom:48px">
-      <div style="flex:1 1 320px;min-width:260px">
-        <a href="/" style="display:flex;align-items:center;line-height:1;margin-bottom:20px"><img src="assets/logo.png" alt="Project Vision" width="180" height="32" style="height:32px;width:auto;display:block"></a>
-        <div style="font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:8px">Address</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.65);line-height:1.6;max-width:32ch">Unit 11 / 8 Avenue of Americas, Newington NSW 2127, Australia</div>
-        <div style="margin-top:14px;display:flex;flex-direction:column;gap:6px">
-          <a href="tel:+61296544030" onClick="trackEvent('phone_click', { phone_number: '+61296544030', contact_type: 'office' })" style="font-size:15px;font-weight:600;color:#5b9bff;transition:color .25s" style-hover="color:#fff">+61 2 9654 4030</a>
-          <a href="mailto:info@projectvision.com.au" onClick="trackEvent('email_click', { email_address: 'info@projectvision.com.au', contact_type: 'general' })" style="font-size:14.5px;color:rgba(255,255,255,.65);transition:color .25s" style-hover="color:#fff">info@projectvision.com.au</a>
-        </div>
-      </div>
-      <div style="flex:1 1 200px;max-width:240px">
-        <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#5b9bff;margin-bottom:16px">Navigation</div>
-        <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;font-weight:500;color:rgba(255,255,255,.7)">
-          <a href="/" style="transition:color .25s" style-hover="color:#fff">Home</a>
-          <a href="/about" style="transition:color .25s" style-hover="color:#fff">About Us</a>
-          <a href="/capabilities" style="transition:color .25s" style-hover="color:#fff">Capabilities</a>
-          <a href="#projects" style="transition:color .25s" style-hover="color:#fff">Projects</a>
-          <button onClick="{{ openContactModal }}" style="text-align:left;transition:color .25s;background:none;border:none;padding:0;font:inherit;color:inherit" style-hover="color:#fff">Contact Us</button>
-        </div>
-      </div>
-    </div>
-    <div style="padding-top:24px;border-top:1px solid rgba(255,255,255,.08);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:rgba(255,255,255,.45)">
-      <div>© 2025 Project Vision Pty Ltd. All rights reserved. &nbsp;·&nbsp; Powered by <a href="https://www.phantomrank.com" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline" style-hover="color:#fff">PhantomRank</a></div>
-      <div>Plan · Design · Deliver</div>
-    </div>
-  </div>
-</footer>
-
-</div>
-</sc-if>
-
-<!-- ============ VIEW B — EDITORIAL ============ -->
-<sc-if value="{{ viewB }}" hint-placeholder-val="{{ false }}">
 <div style="background:#F7F6F3;color:#0D1E35">
 
 <!-- NAV -->
@@ -449,7 +185,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div style="position:relative;z-index:2;padding:0 clamp(20px,5vw,64px);max-width:1320px;width:100%;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start">
     <div style="display:flex;justify-content:center;width:100%;margin-bottom:22px;animation:pvUp .8s cubic-bezier(.16,1,.3,1) .16s both"><img src="assets/logo.png" alt="Project Vision" width="320" height="110" style="height:clamp(54px,11vw,110px);width:auto;max-width:94%;object-fit:contain;display:inline-block"></div>
     <div style="font-size:clamp(14px,2.2vw,17px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-align:center;width:100%;margin-bottom:18px;text-shadow:0 2px 12px rgba(0,0,0,.4);animation:pvUp .8s cubic-bezier(.16,1,.3,1) .22s both">Established &nbsp;<span style="color:#5b9bff;font-weight:900">1999</span></div>
-    <h1 style="margin:0;font-size:clamp(14px,2.2vw,18px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-align:center;width:100%;margin-bottom:clamp(32px,4.5vw,56px);text-shadow:0 2px 12px rgba(0,0,0,.4);animation:pvUp .7s cubic-bezier(.16,1,.3,1) .3s both">Plan &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Design &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Deliver{{ deliverSep }}Together</h1>
+    <h1 style="margin:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(12px,1.8vw,20px);width:100%;margin-bottom:clamp(32px,4.5vw,56px);animation:pvUp .7s cubic-bezier(.16,1,.3,1) .3s both">
+      <span style="font-size:clamp(14px,2.2vw,18px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4);margin-right:-.28em">Plan &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Design &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Deliver</span>
+      <span style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(14px,2.2vw,24px)">
+        <span style="display:inline-block;width:clamp(36px,5.5vw,68px);height:clamp(2.5px,.3vw,3.5px);background:#1B6FE4;border-radius:4px"></span>
+        <span style="font-size:clamp(16px,2.6vw,22px);font-weight:900;letter-spacing:.34em;text-transform:uppercase;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5);margin-right:-.34em">Together</span>
+        <span style="display:inline-block;width:clamp(36px,5.5vw,68px);height:clamp(2.5px,.3vw,3.5px);background:#1B6FE4;border-radius:4px"></span>
+      </span>
+    </h1>
     <div style="width:170px;height:1px;background:rgba(255,255,255,.3);margin:clamp(24px,3.5vw,40px) auto 0;animation:pvUp .7s cubic-bezier(.16,1,.3,1) .44s both"></div>
     <div style="display:flex;flex-wrap:wrap;row-gap:10px;column-gap:clamp(24px,4vw,56px);align-items:flex-end;justify-content:center;width:100%;padding-top:clamp(24px,3.5vw,40px);animation:pvUp .7s cubic-bezier(.16,1,.3,1) .44s both">
       <a href="#projects" onClick="trackEvent('cta_click', { cta_label: 'View Our Work', cta_location: 'hero_editorial' })" style="flex:none;display:inline-flex;align-items:center;justify-content:center;height:56px;padding:0 clamp(16px,3vw,32px);width:clamp(260px,85vw,290px);max-width:100%;border-radius:8px;background:#1B6FE4;color:#fff;font-size:clamp(13.5px,3.6vw,15px);font-weight:600;letter-spacing:.01em;white-space:nowrap;transition:all .3s cubic-bezier(.16,1,.3,1)" style-hover="background:#1559bd;transform:translateY(-3px);box-shadow:0 14px 30px rgba(27,111,228,.42)">View Our Work →</a>
@@ -477,7 +220,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </div>
   </div>
   <div style="max-width:1320px;margin:clamp(40px,5vw,64px) auto 0;aspect-ratio:21/9;overflow:hidden;position:relative">
-    <img src="assets/directors.jpg" alt="Project Vision Directors" width="1320" height="565" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:{{ feature.bFilter }}">
+    <img src="assets/directors.jpg" alt="Project Vision Directors" width="1320" height="565" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 15%">
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,30,53,0) 55%,rgba(13,30,53,.34) 100%)"></div>
   </div>
 </section>
@@ -666,7 +409,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 </footer>
 
 </div>
-</sc-if>
 
 <!-- ============ SHARED: DRAWER ============ -->
 <div onClick="{{ closeDrawer }}" data-pv-drawer style="position:fixed;inset:0;z-index:1040;background:rgba(13,30,53,.4);opacity:{{ drawerOv }};pointer-events:{{ drawerPe }};transition:opacity .3s"></div>
@@ -758,22 +500,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 </div>
 </sc-if>
 
-<!-- ============ SHARED: SWITCHER ============ -->
-<div data-pv-switcher style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:1300;display:{{ switcherDisplay }};gap:4px;padding:5px;background:rgba(13,30,53,.92);backdrop-filter:blur(14px);border-radius:100px;box-shadow:0 14px 40px rgba(9,21,43,.34);border:1px solid rgba(255,255,255,.1)">
-  <button onClick="{{ setViewA }}" style="display:inline-flex;align-items:center;height:38px;padding:0 20px;border-radius:100px;font-size:13px;font-weight:700;letter-spacing:-.01em;background:{{ aBg }};color:{{ aColor }};transition:all .3s">A · Signature</button>
-  <button onClick="{{ setViewB }}" style="display:inline-flex;align-items:center;height:38px;padding:0 20px;border-radius:100px;font-size:13px;font-weight:700;letter-spacing:-.01em;background:{{ bBg }};color:{{ bColor }};transition:all .3s">B · Editorial</button>
-</div>
-
-</div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;bMonochrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showSwitcher&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;bMonochrome&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
   constructor(props){
     super(props);
-    let v='B';
     this._embed=true;
-    try{ const q=new URLSearchParams(location.search); const qv=q.get('view'); if(qv==='A'||qv==='B') v=qv; if(q.get('embed')==='1') this._embed=true; }catch(e){}
-    this.state={ view:v, w:(typeof window!=='undefined'?window.innerWidth:1280), scrolled:false, heroIdx:0, projIdx:0, workIdx:0, testIdx:0, modalId:null, mImg:0, drawer:false, capOpen:false, contactModalOpen:false, contactSubmitted:false };
+    try{ const q=new URLSearchParams(location.search); if(q.get('embed')==='1') this._embed=true; }catch(e){}
+    this.state={ w:(typeof window!=='undefined'?window.innerWidth:1280), scrolled:false, heroIdx:0, workIdx:0, testIdx:0, modalId:null, mImg:0, drawer:false, capOpen:false, contactModalOpen:false, contactSubmitted:false };
   }
   componentDidMount(){
     this._r=()=>{ if(window.innerWidth!==this.state.w) this.setState({w:window.innerWidth}); };
@@ -801,15 +535,13 @@ class Component extends DCLogic {
     this._s();
     this._safety=setTimeout(()=>{ document.querySelectorAll('[data-rv]:not(.pv-in)').forEach(el=>el.classList.add('pv-in')); document.querySelectorAll('[data-countup]').forEach(el=>{ const raw=el.getAttribute('data-target')||'0'; const tg=parseFloat(raw); if(tg>0 && el.textContent==='0') el.textContent=(el.getAttribute('data-prefix')||'')+tg.toFixed(raw.includes('.')?1:0)+(el.getAttribute('data-suffix')||''); }); }, 4000);
     this._t=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({heroIdx:(s.heroIdx+1)%7})); },6000);
-    this._pt=setInterval(()=>{ if(this.state.view==='A'&&!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({projIdx:(s.projIdx+1)%7})); },6000);
-    this._wt=setInterval(()=>{ if(this.state.view==='B'&&!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({workIdx:(s.workIdx+1)%7})); },5500);
-    this._qt=setInterval(()=>{ if(this.state.view==='B'&&!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({testIdx:(s.testIdx+1)%8})); },5000);
+    this._wt=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({workIdx:(s.workIdx+1)%7})); },5500);
+    this._qt=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({testIdx:(s.testIdx+1)%8})); },5000);
   }
   _arm(){ if(!this._io) { document.querySelectorAll('[data-rv]').forEach(el=>el.classList.add('pv-in')); return; } document.querySelectorAll('[data-rv]').forEach(el=>{ if(!this._seen.has(el)){ this._seen.add(el); this._io.observe(el); } }); if(this._cio){ document.querySelectorAll('[data-countup]').forEach(el=>{ if(!this._seen.has(el)){ this._seen.add(el); this._cio.observe(el); } }); } }
   _countUp(el){ const target=parseFloat(el.getAttribute('data-target')||'0'); if(!(target>0)) return; const decimals=(el.getAttribute('data-target')||'').includes('.')?1:0; const suf=el.getAttribute('data-suffix')||''; const pre=el.getAttribute('data-prefix')||''; const dur=1600; const t0=performance.now(); const step=(t)=>{ const p=Math.min(1,(t-t0)/dur); const eased=1-Math.pow(1-p,3); el.textContent=pre+(target*eased).toFixed(decimals)+suf; if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
   componentDidUpdate(){ this._arm(); }
-  componentWillUnmount(){ window.removeEventListener('resize',this._r); window.removeEventListener('scroll',this._s); clearInterval(this._t); clearInterval(this._pt); clearInterval(this._wt); clearInterval(this._qt); if(this._io) this._io.disconnect(); if(this._cio) this._cio.disconnect(); if(this._raf) cancelAnimationFrame(this._raf); }
-  setView(v){ try{localStorage.setItem('pv_view',v);}catch(e){} try{window.scrollTo(0,0);}catch(e){} this.lock(false); this.setState({view:v,drawer:false,modalId:null,contactModalOpen:false,scrolled:false,capOpen:false}); }
+  componentWillUnmount(){ window.removeEventListener('resize',this._r); window.removeEventListener('scroll',this._s); clearInterval(this._t); clearInterval(this._wt); clearInterval(this._qt); if(this._io) this._io.disconnect(); if(this._cio) this._cio.disconnect(); if(this._raf) cancelAnimationFrame(this._raf); }
   toggleCap(){ this.setState(s=>({capOpen:!s.capOpen})); }
   lock(on){ try{ document.body.style.overflow=on?'hidden':''; }catch(e){} }
   openContactModal(e, label, loc){
@@ -894,7 +626,6 @@ class Component extends DCLogic {
       {id:'petrol_gregory_hills',name:'Woolworths Petrol Gregory Hills',loc:'Gregory Hills, NSW',tag:'New Service Station Development',status:'done',hook:'Ground-up development of EG Caltex service station.',desc:"Ground-up development of a new EG Caltex service station in Gregory Hills. The project included a multi-bay fuel forecourt, timber-clad convenience store, café-quality coffee facilities and an Oliver's Real Food to Go offering.",imgs:['assets/proj-petrol-3.jpg','assets/proj-petrol-1.jpg','assets/proj-petrol-2.jpg']}
     ];
     const bMono=this.props.bMonochrome??false;
-    const showSwitcher=this.props.showSwitcher??true;
     const projects=RAW.map((p,i)=>{
       const imgs=p.imgs || [1,2,3].map(n=>`assets/proj-${p.id}-${n}.jpg`);
       const img=imgs[0];
@@ -965,12 +696,7 @@ class Component extends DCLogic {
     return {
       deliverSep: isMobile ? ' ' : '\u00a0\u00b7\u00a0',
       discQuoteGap: isMobile ? '10px' : '28px',
-      viewA:st.view==='A', viewB:st.view==='B',
       isMobile, isDesktop:!isMobile,
-      setViewA:()=>this.setView('A'), setViewB:()=>this.setView('B'),
-      aBg:st.view==='A'?'#1B6FE4':'transparent', aColor:st.view==='A'?'#fff':'rgba(255,255,255,.6)',
-      bBg:st.view==='B'?'#1B6FE4':'transparent', bColor:st.view==='B'?'#fff':'rgba(255,255,255,.6)',
-      switcherDisplay:'none',
       navBg: st.scrolled?'rgba(255,255,255,.97)':'rgba(9,21,43,.68)',
       navShadow: st.scrolled?'0 1px 0 #DDE4EE':'none',
       navColor: st.scrolled?'#0D1E35':'#fff',
@@ -984,27 +710,7 @@ class Component extends DCLogic {
       hbMid: st.drawer?'0':'1',
       hbBot: st.drawer?'translateY(-6.8px) rotate(-45deg)':'translateY(0) rotate(0deg)',
       heroLayers, heroDots, sectorsLoop,
-      projects, proj:projects[st.projIdx],
-      projDir:isMobile?'column':'row',
-      projAspect:isMobile?'4/5':'16/9',
-      whoIntroPos:isMobile?'static':'sticky',
-      projCounter:`${st.projIdx+1} / ${projects.length}`,
-      capAnim:(st.projIdx%2? 'pvCapA':'pvCapB')+' .6s cubic-bezier(.16,1,.3,1) both',
-      nextProj:()=>{
-        const nextIdx=(st.projIdx+1)%projects.length;
-        this.setState({projIdx:nextIdx});
-        if(typeof window.trackEvent==='function'){
-          window.trackEvent('project_navigation', { direction: 'next', project_name: projects[nextIdx].name });
-        }
-      },
-      prevProj:()=>{
-        const prevIdx=(st.projIdx+projects.length-1)%projects.length;
-        this.setState({projIdx:prevIdx});
-        if(typeof window.trackEvent==='function'){
-          window.trackEvent('project_navigation', { direction: 'prev', project_name: projects[prevIdx].name });
-        }
-      },
-      feature:projects[0], works:projects.slice(1),
+      projects,
       whyBtnMargin: isMobile ? '20px auto 0' : '0 0 0 auto',
       whyBtnAlign: isMobile ? 'center' : 'auto',
       whyBtnWidth: isMobile ? '100%' : 'clamp(215px, 20vw, 240px)',
@@ -1069,7 +775,7 @@ class Component extends DCLogic {
       drawerOv: st.drawer?'1':'0',
       drawerPe: st.drawer?'auto':'none',
       drawerCtaRadius: '8px',
-      drawerBg: st.view==='B'?'#F7F6F3':'#fff',
+      drawerBg: '#F7F6F3',
       toggleDrawer:()=>this.toggleDrawer(), closeDrawer:()=>this.closeDrawer()
     };
   }

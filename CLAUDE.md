@@ -41,10 +41,8 @@ To change content, find the data arrays near the top of `renderVals()`:
   style is a `style="..."` attribute. Pseudo-states use `style-hover="..."`.
 - The only global CSS lives in `<helmet><style>` at the top of the template:
   the reset, `@keyframes`, and print rules. Nothing else belongs there.
-- Both design directions (A "Signature" and B "Editorial") are still present in
-  the file. **This build is locked to B.** In the constructor, `let v='B'` and
-  `this._embed=true`; `switcherDisplay` is `'none'`. Leave Type A markup alone —
-  it is dead code here but kept for reference.
+- **Single Unified Website.** There are no AB views or switchers. The website is
+  a single, clean, cohesive build.
 
 ## Design tokens
 

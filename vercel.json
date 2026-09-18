@@ -26,17 +26,6 @@
       "source": "/projects.html",
       "destination": "/#projects",
       "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.projectvision.com.au"
-        }
-      ],
-      "destination": "https://projectvision.com.au/$1",
-      "permanent": true
     }
   ],
   "headers": [

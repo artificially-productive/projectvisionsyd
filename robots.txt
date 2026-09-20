@@ -1,4 +1,62 @@
 User-agent: *
 Allow: /
 
+# ── Google Search & Google AI (Gemini, AI Overviews)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# ── OpenAI Crawlers (GPTBot, OAI-SearchBot for citations, ChatGPT-User)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ── Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# ── Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ── Amazon / Alexa / Amazon Q
+User-agent: Amazonbot
+Allow: /
+
+# ── Apple Intelligence & Siri
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# ── Cohere
+User-agent: cohere-ai
+Allow: /
+
+# ── ByteDance (TikTok / Doubao)
+User-agent: Bytespider
+Allow: /
+
+# ── Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# ── Sitemaps
 Sitemap: https://projectvision.com.au/sitemap.xml

@@ -11,6 +11,7 @@ const MIME_TYPES = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.svg': 'image/svg+xml',
   '.xml': 'application/xml',
   '.txt': 'text/plain'
@@ -45,7 +46,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  let filePath = path.join(__dirname, parsedUrl.pathname === '/' ? 'index.html' : parsedUrl.pathname);
+  let filePath = path.join(__dirname, parsedUrl.pathname === '/' ? 'index.html' : decodeURIComponent(parsedUrl.pathname));
   if (!fs.existsSync(filePath) && fs.existsSync(filePath + '.html')) {
     filePath += '.html';
   }

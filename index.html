@@ -354,6 +354,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <button onClick="{{ nextWork }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(13,30,53,.18);display:flex;align-items:center;justify-content:center;color:#0D1E35;transition:all .3s" style-hover="border-color:#1B6FE4;color:#1B6FE4">→</button>
       </div>
     </div>
+    
+    <!-- Preload all main images for seamless switching -->
+    <div style="display:none">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+        <img src="{{ p.img }}">
+      </sc-for>
+    </div>
   </div>
 </section>
 
@@ -692,6 +699,10 @@ class Component extends DCLogic {
     ].map((s,i)=>({...s,path:SECPATHS[i],pulseDelay:(i*0.5)+'s'}));
     const sectorsLoop=[...SECTORS_A,...SECTORS_A];
     const modalP=st.modalId?projects.find(p=>p.id===st.modalId):null;
+    if(st.modalId && st.modalId !== this._lastPreload){
+      this._lastPreload = st.modalId;
+      if(modalP && modalP.imgs) modalP.imgs.forEach(src => { const img = new Image(); img.src = src; });
+    }
     let modal=null;
     if(modalP){
       modal={ name:modalP.name, tag:modalP.tag, loc:modalP.loc, desc:modalP.desc, statusLabel:modalP.statusLabel,

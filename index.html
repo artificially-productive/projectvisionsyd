@@ -298,7 +298,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       </div>
 
       <!-- Cell 03 -->
-      <div class="dev-cell" style="cursor:pointer" onClick="{{ openSilverwater }}">
+      <div class="dev-cell">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
           <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">03</span>
           <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
@@ -310,7 +310,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       </div>
 
       <!-- Cell 04 -->
-      <div class="dev-cell" style="border-right:none;cursor:pointer" onClick="{{ openTurton }}">
+      <div class="dev-cell" style="border-right:none">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
           <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">04</span>
           <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(239,68,68,.3);color:#EF4444;text-transform:uppercase">Projected</span>
@@ -346,7 +346,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       </div>
 
       <!-- Cell 07 -->
-      <div class="dev-cell" style="border-right:none;cursor:pointer" onClick="{{ openTamworth }}">
+      <div class="dev-cell" style="border-right:none">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
           <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">07</span>
           <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(239,68,68,.3);color:#EF4444;text-transform:uppercase">Projected</span>
@@ -382,7 +382,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       </div>
 
       <!-- Cell 10 -->
-      <div class="dev-cell" style="border-bottom:none;border-right:none;cursor:pointer" onClick="{{ openMarsden }}">
+      <div class="dev-cell" style="border-bottom:none;border-right:none">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
           <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">10</span>
           <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Approved</span>
@@ -398,7 +398,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <p style="font-size:11.5px;color:#94A3B4;max-width:50ch;line-height:1.5">Projected figures are forecasts based on current feasibility and are not a guarantee of future returns.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap">
         <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:#0D1E35;color:#fff;font-size:13.5px;font-weight:600;border-radius:4px;transition:all .2s;white-space:nowrap" style-hover="background:#1B6FE4;transform:translateY(-2px);box-shadow:0 8px 16px rgba(13,30,53,.2)">Invest with us →</button>
-        <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:#fff;border:1px solid #DDE4EE;color:#0D1E35;font-size:13.5px;font-weight:600;border-radius:4px;transition:all .2s;white-space:nowrap" style-hover="border-color:#0D1E35;transform:translateY(-2px);box-shadow:0 8px 16px rgba(13,30,53,.08)">Manage my development →</button>
+
       </div>
     </div>
   </div>
@@ -760,9 +760,9 @@ class Component extends DCLogic {
       }
     });
   }
-  openModal(id){
+  openModal(id, context='works'){
     this.lock(true);
-    this.setState({modalId:id,mImg:0});
+    this.setState({modalId:id,mImg:0,modalContext:context});
     if(typeof window.trackEvent==='function'){
       const RAW=[
         {"id":"narellan","name":"Narellan Town Centre","tag":"Tenancy Coordination & Petrol Station PM"},
@@ -784,11 +784,7 @@ class Component extends DCLogic {
         {"id":"austral","name":"Austral","tag":"Residential"},
         {"id":"marley_spoon_swan","name":"Marley Spoon Swan","tag":"Industrial"},
         {"id":"marley_spoon_wetherill_park","name":"Marley Spoon – Sydney (Wetherill Park)","tag":"Industrial"},
-        {"id":"silverwater","name":"Silverwater","loc":"Silverwater, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-        {"id":"turton_place","name":"Turton Place","loc":"Turton Place, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-        {"id":"tamworth","name":"Tamworth","loc":"Tamworth, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-        {"id":"238_marsden","name":"238 Marsden","loc":"238 Marsden, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-      ];
+        ];
       const p=RAW.find(x=>x.id===id);
       window.trackEvent('project_view', { project_id: id, project_name: p?p.name:id, project_category: p?p.tag:'' });
     }
@@ -797,18 +793,22 @@ class Component extends DCLogic {
   prevModal(e){
     if(e&&e.stopPropagation) e.stopPropagation();
     if(!this.state.modalId || !this._pIds) return;
-    const idx = this._pIds.indexOf(this.state.modalId);
+    const devIds = ['rydalmere', 'gymea_cir_rouse_hill', 'austral', 'toukley', 'yoorana', 'concord_west_duplex'];
+    const pIds = this.state.modalContext === 'developments' ? devIds : this._pIds;
+    const idx = pIds.indexOf(this.state.modalId);
     if(idx===-1) return;
-    const nextIdx = (idx - 1 + this._pIds.length) % this._pIds.length;
-    this.openModal(this._pIds[nextIdx]);
+    const nextIdx = (idx - 1 + pIds.length) % pIds.length;
+    this.openModal(pIds[nextIdx], this.state.modalContext);
   }
   nextModal(e){
     if(e&&e.stopPropagation) e.stopPropagation();
     if(!this.state.modalId || !this._pIds) return;
-    const idx = this._pIds.indexOf(this.state.modalId);
+    const devIds = ['rydalmere', 'gymea_cir_rouse_hill', 'austral', 'toukley', 'yoorana', 'concord_west_duplex'];
+    const pIds = this.state.modalContext === 'developments' ? devIds : this._pIds;
+    const idx = pIds.indexOf(this.state.modalId);
     if(idx===-1) return;
-    const nextIdx = (idx + 1) % this._pIds.length;
-    this.openModal(this._pIds[nextIdx]);
+    const nextIdx = (idx + 1) % pIds.length;
+    this.openModal(pIds[nextIdx], this.state.modalContext);
   }
 
   toggleDrawer(){ const d=!this.state.drawer; this.lock(d); this.setState({drawer:d}); }
@@ -845,11 +845,7 @@ class Component extends DCLogic {
       {"id":"austral","name":"Austral","loc":"23 Tenth Avenue, Austral, NSW","tag":"Residential","status":"live","hook":"Residential Subdivision & Development Management","desc":"A residential subdivision of a 1.213 ha site into 13 residential lots, supported by new road, stormwater drainage, servicing and earthworks. The project is being progressed through the planning and approval process, with a projected 100% return on capital.","imgs":["assets/Austral/00 page_06_image_02_compressed.webp","assets/Austral/page_01_image_01_compressed.webp","assets/Austral/page_10_image_02_compressed.webp","assets/Austral/page_48_image_01_compressed.webp"]},
       {"id":"marley_spoon_swan","name":"Marley Spoon Swan","loc":"61-63 Water Gum Dr, Jordan Springs NSW","tag":"Industrial","status":"done","hook":"Project Management","desc":"Projectvision provided project management services for the completed Marley Spoon facility in Swan, coordinating project delivery, consultants and key project stakeholders to support the successful completion of the development.","imgs":["assets/Marley Spoon Swan/00 230722-marley-spoon-centurion-place-jandakot-lg-04-768x512_compressed.webp","assets/Marley Spoon Swan/230627-marley-spoon-centurion-place-jandakot-aerial-07_compressed.webp","assets/Marley Spoon Swan/230627-marley-spoon-centurion-place-jandakot-aerial-09_compressed.webp","assets/Marley Spoon Swan/230722-marley-spoon-centurion-place-jandakot-lg-01_compressed.webp","assets/Marley Spoon Swan/230722-marley-spoon-centurion-place-jandakot-lg-05-1_compressed.webp"]},
       {"id":"marley_spoon_wetherill_park","name":"Marley Spoon – Sydney (Wetherill Park)","loc":"300 Victoria St, WETHERILL PARK NSW","tag":"Industrial","status":"done","hook":"Project Management","desc":"ProjectVision provided full project management services for this 4,900 m² industrial facility, including design team engagement, authority management, construction tendering and builder appointment, construction management, project completion and handover to operations. The project was completed in 2021.","imgs":["assets/Marley Spoon wetherill park/00 Marley-Spoon-1440x900_compressed.webp","assets/Marley Spoon wetherill park/20210303_152106_compressed.webp","assets/Marley Spoon wetherill park/20210303_152109_compressed.webp","assets/Marley Spoon wetherill park/20210303_152126_compressed.webp","assets/Marley Spoon wetherill park/20210303_152344_compressed.webp","assets/Marley Spoon wetherill park/MarleySpoon-Warehouse-WetherillPark-NSW-17-scaled_compressed.webp"]},
-      {"id":"silverwater","name":"Silverwater","loc":"Silverwater, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-      {"id":"turton_place","name":"Turton Place","loc":"Turton Place, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-      {"id":"tamworth","name":"Tamworth","loc":"Tamworth, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-      {"id":"238_marsden","name":"238 Marsden","loc":"238 Marsden, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
-    ];
+      ];
     const bMono=this.props.bMonochrome??false;
     this._pIds = RAW.map(p=>p.id);
     const projects=RAW.map((p,i)=>{
@@ -865,7 +861,7 @@ class Component extends DCLogic {
       badgeColor:p.status==='live'?'#16a34a':'#1B6FE4',
       num:String(i+1).padStart(2,'0'),
       bFilter:bMono?'grayscale(1) contrast(1.04)':'none',
-      open:()=>this.openModal(p.id),
+      open:()=>this.openModal(p.id, 'works'),
       select:()=>this.setState({projIdx:i}),
       active:i===st.projIdx,
       dotBg:i===st.projIdx?'#1B6FE4':'#DDE4EE',
@@ -927,15 +923,15 @@ class Component extends DCLogic {
       deliverSep: isMobile ? ' ' : '\u00a0\u00b7\u00a0',
       discQuoteGap: isMobile ? '10px' : '28px',
       isMobile, isDesktop:!isMobile,
-      openRydalmere: () => this.openModal('rydalmere'),
-      openGymea: () => this.openModal('gymea_cir_rouse_hill'),
+      openRydalmere: () => this.openModal('rydalmere', 'developments'),
+      openGymea: () => this.openModal('gymea_cir_rouse_hill', 'developments'),
       openSilverwater: () => this.openModal('silverwater'),
       openTurton: () => this.openModal('turton_place'),
-      openAustral: () => this.openModal('austral'),
-      openToukley: () => this.openModal('toukley'),
+      openAustral: () => this.openModal('austral', 'developments'),
+      openToukley: () => this.openModal('toukley', 'developments'),
       openTamworth: () => this.openModal('tamworth'),
-      openYoorana: () => this.openModal('yoorana'),
-      openConcord: () => this.openModal('concord_west_duplex'),
+      openYoorana: () => this.openModal('yoorana', 'developments'),
+      openConcord: () => this.openModal('concord_west_duplex', 'developments'),
       openMarsden: () => this.openModal('238_marsden'),
       navBg: st.scrolled?'rgba(255,255,255,.97)':'rgba(9,21,43,.68)',
       navShadow: st.scrolled?'0 1px 0 #DDE4EE':'none',

@@ -192,11 +192,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     <div style="display:flex;justify-content:center;width:100%;margin-bottom:22px;animation:pvUp .8s cubic-bezier(.16,1,.3,1) .16s both"><img src="assets/logo.png" alt="Project Vision" width="320" height="110" style="height:clamp(54px,11vw,110px);width:auto;max-width:94%;object-fit:contain;display:inline-block"></div>
     <div style="font-size:clamp(14px,2.2vw,17px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-align:center;width:100%;margin-bottom:18px;text-shadow:0 2px 12px rgba(0,0,0,.4);animation:pvUp .8s cubic-bezier(.16,1,.3,1) .22s both">Established &nbsp;<span style="color:#5b9bff;font-weight:900">1999</span></div>
     <h1 style="margin:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(12px,1.8vw,20px);width:100%;margin-bottom:clamp(32px,4.5vw,56px);animation:pvUp .7s cubic-bezier(.16,1,.3,1) .3s both">
-      <span style="font-size:clamp(14px,2.2vw,18px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4);margin-right:-.28em">Plan &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Design &nbsp;<span style="color:#5b9bff">·</span>&nbsp; Deliver</span>
-      <span style="display:inline-flex;align-items:center;justify-content:center;gap:clamp(14px,2.2vw,24px)">
-        <span style="display:inline-block;width:clamp(36px,5.5vw,68px);height:clamp(2.5px,.3vw,3.5px);background:#1B6FE4;border-radius:4px"></span>
-        <span style="font-size:clamp(16px,2.6vw,22px);font-weight:900;letter-spacing:.34em;text-transform:uppercase;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5);margin-right:-.34em">Together</span>
-        <span style="display:inline-block;width:clamp(36px,5.5vw,68px);height:clamp(2.5px,.3vw,3.5px);background:#1B6FE4;border-radius:4px"></span>
+      <span style="font-size:clamp(28px,4.5vw,40px);font-weight:900;letter-spacing:.34em;text-transform:uppercase;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.5);margin-right:-.34em">Developers</span>
+      <span style="font-size:clamp(16px,2.4vw,22px);font-weight:800;letter-spacing:.28em;text-transform:uppercase;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.4);margin-right:-.28em;display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.5vw,16px)">
+        <span>Architects</span>
+        <span style="color:#1B6FE4;font-weight:900">|</span>
+        <span>Builders</span>
       </span>
     </h1>
     <div style="width:170px;height:1px;background:rgba(255,255,255,.3);margin:clamp(24px,3.5vw,40px) auto 0;animation:pvUp .7s cubic-bezier(.16,1,.3,1) .44s both"></div>
@@ -216,7 +216,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <section style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px) 0">
   <div style="max-width:1320px;margin:0 auto">
     <div style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4;margin-bottom:16px">Our Why</div>
-    <h2 style="font-size:clamp(34px,6vw,66px);font-weight:800;letter-spacing:-.03em;line-height:1.1"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">We build more than buildings.</span><br><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">We build </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">better outcomes.</span></h2>
+    <h2 style="font-size:clamp(34px,6vw,66px);font-weight:800;letter-spacing:-.03em;line-height:1.1"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">"We put money where our mouth is”</span><br><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Our fees </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">are tied to ROI</span></h2>
     <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:flex-end;justify-content:space-between;margin-top:clamp(32px,4.5vw,56px)">
       <p style="flex:1 1 360px;font-size:clamp(16px,2vw,21px);line-height:1.55;color:#3a4a5c;max-width:52ch">We believe great places strengthen communities and drive economic growth. That's why we tie our success to yours, every decision built for <span style="color:#1B6FE4;font-weight:700">long term value</span>, <span style="color:#1B6FE4;font-weight:700">stronger communities</span>, and <span style="color:#1B6FE4;font-weight:700">better returns</span>.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;width:100%;justify-content:{{ isMobile ? 'center' : 'flex-start' }};align-self:{{ whyBtnAlign }}">
@@ -253,10 +253,161 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   </div>
 </section>
 
+<style>
+  .dev-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; background: #fff; border: 1px solid #EEF1F6; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 30px rgba(13,30,53,.04); }
+  .dev-grid-main { grid-column: span 1; grid-row: span 1; }
+  @media(min-width: 900px) { .dev-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .dev-grid-main { grid-column: span 1; grid-row: span 3; } }
+  .dev-cell { padding: clamp(20px, 2.5vw, 24px); border-bottom: 1px solid #EEF1F6; border-right: 1px solid #EEF1F6; display: flex; flex-direction: column; }
+</style>
+
+<!-- DEVELOPMENTS B -->
+<section id="developments" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);background:#F7F6F3">
+  <div style="max-width:1320px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">02 — Developments</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);justify-content:space-between;align-items:center;margin-bottom:clamp(40px,5.5vw,68px)">
+      <h2 style="flex:1 1 500px;font-size:clamp(32px,4.4vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.04"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800;color:#0D1E35">Developed, designed &amp;<br></span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">built by us.</span></h2>
+      <p style="flex:1 1 360px;font-size:clamp(15px,1.6vw,17px);color:#3a4a5c;line-height:1.6;max-width:44ch">Invest with us, or let us manage your development. Either way, our fees are a <strong style="color:#0D1E35">percentage of the profits</strong> — we only win when you do.</p>
+    </div>
+
+    <div class="dev-grid">
+      <!-- Left Main Card (01) -->
+      <div class="dev-grid-main" style="cursor:pointer;background:linear-gradient(155deg, #09152B 0%, #153366 100%); color:#fff; padding:clamp(32px,4vw,48px) clamp(24px,3vw,36px); display:flex; flex-direction:column; justify-content:space-between; min-height:480px; position:relative" onClick="{{ openRydalmere }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65)">
+          <span>Standout Result</span>
+          <span>Delivered</span>
+        </div>
+        <div style="margin-top:40px">
+          <div data-countup data-target="2000" data-suffix="<span style='font-size:0.5em;vertical-align:top;margin-left:2px'>%+</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(64px,8vw,96px);font-weight:800;line-height:.9;margin-bottom:12px;color:#fff">0<span style="font-size:0.5em;vertical-align:top;margin-left:2px">%+</span></div>
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:32px">Return on investment</div>
+          <div style="width:100%;height:1px;background:rgba(255,255,255,.15);margin-bottom:28px"></div>
+          <div style="font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px">Rydalmere</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:rgba(255,255,255,.65)">10 townhouses — developed, designed &amp; built in-house.</div>
+        </div>
+      </div>
+
+      <!-- Cell 02 -->
+      <div class="dev-cell" style="cursor:pointer" onClick="{{ openGymea }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">02</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
+        </div>
+        <div data-countup data-target="400" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return on cash</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Gymea Cir, Rouse Hill</div>
+      </div>
+
+      <!-- Cell 03 -->
+      <div class="dev-cell" style="cursor:pointer" onClick="{{ openSilverwater }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">03</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
+        </div>
+        <div data-countup data-target="250" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Increase in rental return</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Silverwater</div>
+      </div>
+
+      <!-- Cell 04 -->
+      <div class="dev-cell" style="border-right:none;cursor:pointer" onClick="{{ openTurton }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">04</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(239,68,68,.3);color:#EF4444;text-transform:uppercase">Projected</span>
+        </div>
+        <div data-countup data-target="125" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return on capital</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Turton Place</div>
+      </div>
+
+      <!-- Cell 05 -->
+      <div class="dev-cell" style="cursor:pointer" onClick="{{ openAustral }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">05</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(239,68,68,.3);color:#EF4444;text-transform:uppercase">Projected</span>
+        </div>
+        <div data-countup data-target="100" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return on capital</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Austral</div>
+      </div>
+
+      <!-- Cell 06 -->
+      <div class="dev-cell" style="cursor:pointer" onClick="{{ openToukley }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">06</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
+        </div>
+        <div data-countup data-target="100" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return on cash</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Toukley</div>
+      </div>
+
+      <!-- Cell 07 -->
+      <div class="dev-cell" style="border-right:none;cursor:pointer" onClick="{{ openTamworth }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">07</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(239,68,68,.3);color:#EF4444;text-transform:uppercase">Projected</span>
+        </div>
+        <div data-countup data-target="80" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return on cash</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Tamworth</div>
+      </div>
+
+      <!-- Cell 08 -->
+      <div class="dev-cell" style="border-bottom:none;cursor:pointer" onClick="{{ openYoorana }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">08</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
+        </div>
+        <div data-countup data-target="70" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Valuation uplift in 3 months</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Yoorana</div>
+      </div>
+
+      <!-- Cell 09 -->
+      <div class="dev-cell" style="border-bottom:none;cursor:pointer" onClick="{{ openConcord }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">09</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Delivered</span>
+        </div>
+        <div data-countup data-target="45" data-suffix="<span style='font-size:0.55em;vertical-align:top;margin-left:2px'>%</span>" style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px">0<span style="font-size:0.55em;vertical-align:top;margin-left:2px">%</span></div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Return</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">Concord West</div>
+      </div>
+
+      <!-- Cell 10 -->
+      <div class="dev-cell" style="border-bottom:none;border-right:none;cursor:pointer" onClick="{{ openMarsden }}">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+          <span style="font-size:10px;font-weight:700;color:#94A3B4;letter-spacing:.05em">10</span>
+          <span style="font-size:9px;font-weight:700;letter-spacing:.08em;padding:4px 8px;border-radius:100px;border:1px solid rgba(27,111,228,.3);color:#1B6FE4;text-transform:uppercase">Approved</span>
+        </div>
+        <div style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(36px,4.5vw,52px);font-weight:800;color:#1B6FE4;line-height:1;margin-bottom:6px;letter-spacing:-.02em">DA</div>
+        <div style="font-size:12px;color:#55657A;margin-bottom:32px">Development approval secured</div>
+        <div style="width:100%;height:1px;background:#EEF1F6;margin-top:auto;margin-bottom:20px"></div>
+        <div style="font-size:14.5px;font-weight:700;color:#0D1E35">238 Marsden</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-top:32px">
+      <p style="font-size:11.5px;color:#94A3B4;max-width:50ch;line-height:1.5">Projected figures are forecasts based on current feasibility and are not a guarantee of future returns.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:#0D1E35;color:#fff;font-size:13.5px;font-weight:600;border-radius:4px;transition:all .2s;white-space:nowrap" style-hover="background:#1B6FE4;transform:translateY(-2px);box-shadow:0 8px 16px rgba(13,30,53,.2)">Invest with us →</button>
+        <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;background:#fff;border:1px solid #DDE4EE;color:#0D1E35;font-size:13.5px;font-weight:600;border-radius:4px;transition:all .2s;white-space:nowrap" style-hover="border-color:#0D1E35;transform:translateY(-2px);box-shadow:0 8px 16px rgba(13,30,53,.08)">Manage my development →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OUR APPROACH B -->
 <section style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px)">
   <div style="max-width:1320px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">02 — Approach</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">03 — Approach</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,48px);justify-content:space-between;align-items:center">
       <h2 style="flex:1 1 360px;font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:20ch"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Integrated expertise — </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">built around your outcome.</span></h2>
       <div style="flex:1 1 320px;display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:clamp(16px,2.2vw,28px)">
@@ -275,7 +426,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <!-- SECTORS B -->
 <section id="sectors" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);background:#F7F6F3">
   <div style="max-width:1320px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">03 — Sectors</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">04 — Sectors</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:baseline;margin-bottom:clamp(40px,5.5vw,68px)">
       <h2 style="font-size:clamp(26px,4.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:22ch"><span style="font-family:'Saira Semi Condensed',sans-serif;font-weight:800">Built across many typologies. </span><span style="font-family:'Playfair Display',serif;font-weight:500;font-style:italic;color:#1B6FE4">Consistent on every one.</span></h2>
       <div style="font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#55657A">Sectors We Serve</div>
@@ -323,7 +474,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <!-- SELECTED WORKS B -->
 <section id="projects" style="padding:clamp(56px,8vw,96px) clamp(20px,5vw,64px);background:#F7F6F3">
   <div style="max-width:1320px;margin:0 auto">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">04 — Work</span></div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px"><span style="width:40px;height:4px;background:#1B6FE4"></span><span style="font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#1B6FE4">05 — Work</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:baseline;margin-bottom:clamp(34px,4.5vw,56px)">
       <h2 style="font-family:'Saira Semi Condensed',sans-serif;font-size:clamp(28px,5vw,56px);font-weight:800;letter-spacing:-.02em;line-height:1">Selected works</h2>
       <div style="font-size:13px;color:#55657A;font-weight:500">Sydney · Greater NSW</div>
@@ -443,6 +594,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <!-- ============ SHARED: MODAL ============ -->
 <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
 <div onClick="{{ closeModal }}" style="position:fixed;inset:0;z-index:1000;background:rgba(9,21,43,.62);backdrop-filter:blur(6px);display:flex;align-items:flex-end;justify-content:center;padding:0">
+  <button onClick="{{ prevModal }}" aria-label="Previous Project" style="position:absolute;left:clamp(10px, 3vw, 40px);top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:#fff;color:#0D1E35;font-size:24px;font-weight:bold;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(9,21,43,.2);transition:transform .2s;z-index:1010;border:none;cursor:pointer" style-hover="transform:translateY(-50%) scale(1.1);background:#F2F5F9">←</button>
+  <button onClick="{{ nextModal }}" aria-label="Next Project" style="position:absolute;right:clamp(10px, 3vw, 40px);top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:#fff;color:#0D1E35;font-size:24px;font-weight:bold;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(9,21,43,.2);transition:transform .2s;z-index:1010;border:none;cursor:pointer" style-hover="transform:translateY(-50%) scale(1.1);background:#F2F5F9">→</button>
+
   <div onClick="{{ noop }}" style="background:#fff;width:100%;max-width:760px;max-height:92vh;border-radius:18px 18px 0 0;overflow-y:auto;box-shadow:0 -10px 50px rgba(9,21,43,.3)">
     <div style="position:sticky;top:0;background:#fff;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px clamp(20px,4vw,34px) 18px;border-bottom:1px solid #EEF1F6">
       <div>
@@ -546,15 +700,24 @@ class Component extends DCLogic {
     }
     this._arm();
     this._s();
-    this._safety=setTimeout(()=>{ document.querySelectorAll('[data-rv]:not(.pv-in)').forEach(el=>el.classList.add('pv-in')); document.querySelectorAll('[data-countup]').forEach(el=>{ const raw=el.getAttribute('data-target')||'0'; const tg=parseFloat(raw); if(tg>0 && el.textContent==='0') el.textContent=(el.getAttribute('data-prefix')||'')+tg.toFixed(raw.includes('.')?1:0)+(el.getAttribute('data-suffix')||''); }); }, 4000);
+    this._safety=setTimeout(()=>{ document.querySelectorAll('[data-rv]:not(.pv-in)').forEach(el=>el.classList.add('pv-in')); document.querySelectorAll('[data-countup]').forEach(el=>{ const raw=el.getAttribute('data-target')||'0'; const tg=parseFloat(raw); if(tg>0 && el.textContent==='0') el.innerHTML=(el.getAttribute('data-prefix')||'')+tg.toFixed(raw.includes('.')?1:0)+(el.getAttribute('data-suffix')||''); }); }, 4000);
+
+    this._kd = (e) => {
+      if(this.state.modalId) {
+        if(e.key === 'ArrowLeft') this.prevModal();
+        if(e.key === 'ArrowRight') this.nextModal();
+        if(e.key === 'Escape') this.closeModal();
+      }
+    };
+    window.addEventListener('keydown', this._kd);
     this._t=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({heroIdx:(s.heroIdx+1)%7})); },6000);
     this._wt=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({workIdx:(s.workIdx+1)%7})); },5500);
     this._qt=setInterval(()=>{ if(!this.state.modalId&&!this.state.contactModalOpen&&!this.state.drawer) this.setState(s=>({testIdx:(s.testIdx+1)%8})); },5000);
   }
   _arm(){ if(!this._io) { document.querySelectorAll('[data-rv]').forEach(el=>el.classList.add('pv-in')); return; } document.querySelectorAll('[data-rv]').forEach(el=>{ if(!this._seen.has(el)){ this._seen.add(el); this._io.observe(el); } }); if(this._cio){ document.querySelectorAll('[data-countup]').forEach(el=>{ if(!this._seen.has(el)){ this._seen.add(el); this._cio.observe(el); } }); } }
-  _countUp(el){ const target=parseFloat(el.getAttribute('data-target')||'0'); if(!(target>0)) return; const decimals=(el.getAttribute('data-target')||'').includes('.')?1:0; const suf=el.getAttribute('data-suffix')||''; const pre=el.getAttribute('data-prefix')||''; const dur=1600; const t0=performance.now(); const step=(t)=>{ const p=Math.min(1,(t-t0)/dur); const eased=1-Math.pow(1-p,3); el.textContent=pre+(target*eased).toFixed(decimals)+suf; if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
+  _countUp(el){ const target=parseFloat(el.getAttribute('data-target')||'0'); if(!(target>0)) return; const decimals=(el.getAttribute('data-target')||'').includes('.')?1:0; const suf=el.getAttribute('data-suffix')||''; const pre=el.getAttribute('data-prefix')||''; const dur=1600; const t0=performance.now(); const step=(t)=>{ const p=Math.min(1,(t-t0)/dur); const eased=1-Math.pow(1-p,3); el.innerHTML=pre+(target*eased).toFixed(decimals)+suf; if(p<1) requestAnimationFrame(step); }; requestAnimationFrame(step); }
   componentDidUpdate(){ this._arm(); }
-  componentWillUnmount(){ window.removeEventListener('resize',this._r); window.removeEventListener('scroll',this._s); clearInterval(this._t); clearInterval(this._wt); clearInterval(this._qt); if(this._io) this._io.disconnect(); if(this._cio) this._cio.disconnect(); if(this._raf) cancelAnimationFrame(this._raf); }
+  componentWillUnmount(){ window.removeEventListener('resize',this._r); window.removeEventListener('scroll',this._s); clearInterval(this._t); clearInterval(this._wt); clearInterval(this._qt); if(this._io) this._io.disconnect(); if(this._cio) this._cio.disconnect(); if(this._kd) window.removeEventListener('keydown', this._kd); if(this._raf) cancelAnimationFrame(this._raf); }
   toggleCap(){ this.setState(s=>({capOpen:!s.capOpen})); }
   lock(on){ try{ document.body.style.overflow=on?'hidden':''; }catch(e){} }
   openContactModal(e, label, loc){
@@ -602,19 +765,52 @@ class Component extends DCLogic {
     this.setState({modalId:id,mImg:0});
     if(typeof window.trackEvent==='function'){
       const RAW=[
-        {id:'narellan',name:'Narellan Town Centre',tag:'Tenancy Coordination & Petrol Station PM'},
-        {id:'oranpark',name:'Oran Park Town Centre',tag:'Tenancy Coordination & Delivery'},
-        {id:'eg_oranpark',name:'EG Oran Park – Petrol & QSR',tag:'Multi-Tenancy Retail Precinct Delivery'},
-        {id:'petrol_baringa',name:'Woolworths Petrol Baringa',tag:'New Service Station Development'},
-        {id:'petrol_epping',name:'Woolworths Petrol Epping',tag:'Architecture'},
-        {id:'petrol_gregory_hills',name:'Woolworths Petrol Gregory Hills',tag:'New Service Station Development'},
-        {id:'rydalmere',name:'375 Victoria Rd, Rydalmere',tag:'Development, Design & Construction'}
+        {"id":"narellan","name":"Narellan Town Centre","tag":"Tenancy Coordination & Petrol Station PM"},
+        {"id":"oranpark","name":"Oran Park Town Centre","tag":"Tenancy Coordination & Delivery"},
+        {"id":"eg_oranpark","name":"EG Oran Park – Petrol & QSR","tag":"Multi-Tenancy Retail Precinct Delivery"},
+        {"id":"petrol_baringa","name":"Woolworths Petrol Baringa","tag":"New Service Station Development"},
+        {"id":"petrol_epping","name":"Woolworths Petrol Epping","tag":"Architecture"},
+        {"id":"petrol_gregory_hills","name":"Woolworths Petrol Gregory Hills","tag":"New Service Station Development"},
+        {"id":"rydalmere","name":"375 Victoria Rd, Rydalmere","tag":"Development, Design & Construction"},
+        {"id":"jordan_springs","name":"Jordan Springs","tag":"Retail"},
+        {"id":"iskcon","name":"ISKCON","tag":"Community"},
+        {"id":"ilve","name":"ILVE","tag":"Commercial"},
+        {"id":"fox_studios","name":"Fox Studios","tag":"Commercial"},
+        {"id":"greystanes_shoppinh_centre","name":"Greystanes Shopping Centre","tag":"Retail"},
+        {"id":"concord_west_duplex","name":"Concord West Duplex","tag":"Residential"},
+        {"id":"yoorana","name":"Yoorana","tag":"Residential"},
+        {"id":"gymea_cir_rouse_hill","name":"Gymea Cir, Rouse Hill","tag":"Residential"},
+        {"id":"toukley","name":"Toukley","tag":"Residential"},
+        {"id":"austral","name":"Austral","tag":"Residential"},
+        {"id":"marley_spoon_swan","name":"Marley Spoon Swan","tag":"Industrial"},
+        {"id":"marley_spoon_wetherill_park","name":"Marley Spoon – Sydney (Wetherill Park)","tag":"Industrial"},
+        {"id":"silverwater","name":"Silverwater","loc":"Silverwater, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+        {"id":"turton_place","name":"Turton Place","loc":"Turton Place, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+        {"id":"tamworth","name":"Tamworth","loc":"Tamworth, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+        {"id":"238_marsden","name":"238 Marsden","loc":"238 Marsden, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
       ];
       const p=RAW.find(x=>x.id===id);
       window.trackEvent('project_view', { project_id: id, project_name: p?p.name:id, project_category: p?p.tag:'' });
     }
   }
   closeModal(){ this.lock(false); this.setState({modalId:null}); }
+  prevModal(e){
+    if(e&&e.stopPropagation) e.stopPropagation();
+    if(!this.state.modalId || !this._pIds) return;
+    const idx = this._pIds.indexOf(this.state.modalId);
+    if(idx===-1) return;
+    const nextIdx = (idx - 1 + this._pIds.length) % this._pIds.length;
+    this.openModal(this._pIds[nextIdx]);
+  }
+  nextModal(e){
+    if(e&&e.stopPropagation) e.stopPropagation();
+    if(!this.state.modalId || !this._pIds) return;
+    const idx = this._pIds.indexOf(this.state.modalId);
+    if(idx===-1) return;
+    const nextIdx = (idx + 1) % this._pIds.length;
+    this.openModal(this._pIds[nextIdx]);
+  }
+
   toggleDrawer(){ const d=!this.state.drawer; this.lock(d); this.setState({drawer:d}); }
   closeDrawer(){ this.lock(false); this.setState({drawer:false,capOpen:false}); }
   renderVals(){
@@ -630,15 +826,32 @@ class Component extends DCLogic {
       {quote:'Good dedication and commitment — the results were excellent.',author:'Robert Cheong',role:'National Construction Manager, Woolworths'}
     ];
     const RAW=[
-      {id:'narellan',name:'Narellan Town Centre',loc:'Narellan, NSW',tag:'Tenancy Coordination & Petrol Station PM',status:'done',hook:'120+ specialty stores & major retailers coordinated.',desc:'Projectvision provided tenancy coordination and petrol station project management for Narellan Town Centre, a major retail and mixed-use development in South-West Sydney. Our team coordinated tenancy fit outs across more than 120 specialty stores and major retailers, working closely with retailers, authorities and the builder to support a high-quality, coordinated opening delivered on program.',imgs:['assets/narellan/1.webp','assets/narellan/2.webp','assets/narellan/3.webp','assets/narellan/4.webp','assets/narellan/5.webp']},
-      {id:'oranpark',name:'Oran Park Town Centre',loc:'Oran Park, NSW',tag:'Tenancy Coordination & Delivery',status:'done',hook:'Nearly 60 specialty tenancies delivered on time.',desc:'Projectvision provided tenancy coordination for the latest expansion of the Oran Park Town Centre retail podium, working alongside Greenfields Development Company and the wider project team. Our team managed the delivery of nearly 60 specialty tenancies from lease commencement through to opening, coordinating stakeholders to support a smooth and timely retail launch.',imgs:['assets/oran-park/1.webp','assets/oran-park/2.webp','assets/oran-park/3.webp','assets/oran-park/4.webp']},
-      {id:'eg_oranpark',name:'EG Oran Park – Petrol & QSR',loc:'Oran Park, NSW',tag:'Multi-Tenancy Retail Precinct Delivery',status:'done',hook:'Multi-tenancy retail precinct anchored by EG Ampol.',desc:"Delivery of a multi-tenancy retail precinct anchored by an EG Ampol service station, alongside major food and beverage operators including Guzman y Gomez, Hungry Jack's, KFC and Starbucks. Projectvision coordinated tenancies across the precinct, supporting the seamless integration of fuel, dining and convenience uses.",imgs:['assets/oran-park-petrol/1.webp','assets/oran-park-petrol/2.webp','assets/oran-park-petrol/3.webp','assets/oran-park-petrol/4.webp','assets/oran-park-petrol/5.webp']},
-      {id:'petrol_baringa',name:'Woolworths Petrol Baringa',loc:'Baringa, QLD',tag:'New Service Station Development',status:'done',hook:'Ground-up development of a new EG Ampol service station.',desc:'Ground-up development of a new EG Ampol service station in Baringa. The project included an Amplify Premium Fuels forecourt, co-located Oporto drive-thru, Fly Thru car wash and integrated convenience retail facilities.',imgs:['assets/baringa/1.webp','assets/baringa/2.webp','assets/baringa/3.webp','assets/baringa/4.webp']},
-      {id:'petrol_epping',name:'Woolworths Petrol Epping',loc:'Epping, VIC',tag:'Architecture',status:'done',hook:'New EG Ampol service station with drive-thru retail.',desc:'Ground-up development of a new EG Ampol service station in Epping. The project included a multi-bay fuel forecourt alongside a Pizza Hut drive-thru and Caffé Aurora barista drive-thru, integrating fuel, food and convenience retail within the precinct.',imgs:['assets/epping/1.webp','assets/epping/2.webp','assets/epping/3.webp','assets/epping/4.webp','assets/epping/5.webp']},
-      {id:'petrol_gregory_hills',name:'Woolworths Petrol Gregory Hills',loc:'Gregory Hills, NSW',tag:'New Service Station Development',status:'done',hook:'Ground-up development of EG Caltex service station.',desc:"Ground-up development of a new EG Caltex service station in Gregory Hills. The project included a multi-bay fuel forecourt, timber-clad convenience store, café-quality coffee facilities and an Oliver's Real Food to Go offering.",imgs:['assets/gregory-hills/1.webp','assets/gregory-hills/2.webp','assets/gregory-hills/3.webp','assets/gregory-hills/4.webp']},
-      {id:'rydalmere',name:'375 Victoria Rd, Rydalmere',loc:'Rydalmere, NSW',tag:'Development, Design & Construction',status:'done',hook:'10 townhouses over basement parking. DA to handover.',desc:'Development, design and construction of a multi-dwelling residential development comprising 10 townhouses over basement car parking. Projectvision provided an integrated approach across the development, design and construction stages, delivering a coordinated residential outcome from concept through to completion.',imgs:['assets/rydalmere/1.webp','assets/rydalmere/2.webp','assets/rydalmere/3.webp','assets/rydalmere/4.webp','assets/rydalmere/5.webp']}
+      {"id":"narellan","name":"Narellan Town Centre","loc":"Narellan, NSW","tag":"Tenancy Coordination & Petrol Station PM","status":"done","hook":"120+ specialty stores & major retailers coordinated.","desc":"Projectvision provided tenancy coordination and petrol station project management for Narellan Town Centre, a major retail and mixed-use development in South-West Sydney. Our team coordinated tenancy fit outs across more than 120 specialty stores and major retailers, working closely with retailers, authorities and the builder to support a high-quality, coordinated opening delivered on program.","imgs":["assets/narellan/1.webp","assets/narellan/2.webp","assets/narellan/3.webp","assets/narellan/4.webp","assets/narellan/5.webp"]},
+      {"id":"oranpark","name":"Oran Park Town Centre","loc":"Oran Park, NSW","tag":"Tenancy Coordination & Delivery","status":"done","hook":"Nearly 60 specialty tenancies delivered on time.","desc":"Projectvision provided tenancy coordination for the latest expansion of the Oran Park Town Centre retail podium, working alongside Greenfields Development Company and the wider project team. Our team managed the delivery of nearly 60 specialty tenancies from lease commencement through to opening, coordinating stakeholders to support a smooth and timely retail launch.","imgs":["assets/oran-park/1.webp","assets/oran-park/2.webp","assets/oran-park/3.webp","assets/oran-park/4.webp"]},
+      {"id":"eg_oranpark","name":"EG Oran Park – Petrol & QSR","loc":"Oran Park, NSW","tag":"Multi-Tenancy Retail Precinct Delivery","status":"done","hook":"Multi-tenancy retail precinct anchored by EG Ampol.","desc":"Delivery of a multi-tenancy retail precinct anchored by an EG Ampol service station, alongside major food and beverage operators including Guzman y Gomez, Hungry Jack's, KFC and Starbucks. Projectvision coordinated tenancies across the precinct, supporting the seamless integration of fuel, dining and convenience uses.","imgs":["assets/oran-park-petrol/1.webp","assets/oran-park-petrol/2.webp","assets/oran-park-petrol/3.webp","assets/oran-park-petrol/4.webp","assets/oran-park-petrol/5.webp"]},
+      {"id":"petrol_baringa","name":"Woolworths Petrol Baringa","loc":"Baringa, QLD","tag":"New Service Station Development","status":"done","hook":"Ground-up development of a new EG Ampol service station.","desc":"Ground-up development of a new EG Ampol service station in Baringa. The project included an Amplify Premium Fuels forecourt, co-located Oporto drive-thru, Fly Thru car wash and integrated convenience retail facilities.","imgs":["assets/baringa/1.webp","assets/baringa/2.webp","assets/baringa/3.webp","assets/baringa/4.webp"]},
+      {"id":"petrol_epping","name":"Woolworths Petrol Epping","loc":"Epping, VIC","tag":"Architecture","status":"done","hook":"New EG Ampol service station with drive-thru retail.","desc":"Ground-up development of a new EG Ampol service station in Epping. The project included a multi-bay fuel forecourt alongside a Pizza Hut drive-thru and Caffé Aurora barista drive-thru, integrating fuel, food and convenience retail within the precinct.","imgs":["assets/epping/1.webp","assets/epping/2.webp","assets/epping/3.webp","assets/epping/4.webp","assets/epping/5.webp"]},
+      {"id":"petrol_gregory_hills","name":"Woolworths Petrol Gregory Hills","loc":"Gregory Hills, NSW","tag":"New Service Station Development","status":"done","hook":"Ground-up development of EG Caltex service station.","desc":"Ground-up development of a new EG Caltex service station in Gregory Hills. The project included a multi-bay fuel forecourt, timber-clad convenience store, café-quality coffee facilities and an Oliver's Real Food to Go offering.","imgs":["assets/gregory-hills/1.webp","assets/gregory-hills/2.webp","assets/gregory-hills/3.webp","assets/gregory-hills/4.webp"]},
+      {"id":"rydalmere","name":"375 Victoria Rd, Rydalmere","loc":"Rydalmere, NSW","tag":"Development, Design & Construction","status":"done","hook":"10 townhouses over basement parking. DA to handover.","desc":"Development, design and construction of a multi-dwelling residential development comprising 10 townhouses over basement car parking. Projectvision provided an integrated approach across the development, design and construction stages, delivering a coordinated residential outcome from concept through to completion.","imgs":["assets/rydalmere/1.webp","assets/rydalmere/2.webp","assets/rydalmere/3.webp","assets/rydalmere/4.webp","assets/rydalmere/5.webp"]},
+      {"id":"jordan_springs","name":"Jordan Springs","loc":"61–63 Water Gum Drive, Jordan Springs NSW","tag":"Retail","status":"done","hook":"New Supermarket-Anchored Neighbourhood Centre Delivery","desc":"Delivery of a new neighbourhood centre anchored by a full-line Woolworths supermarket and more than 20 speciality retail tenancies. Projectvision provided project management and tenancy coordination across the centre, supporting the coordinated delivery of the supermarket, retail tenancies and associated facilities.","imgs":["assets/Jordan Springs/00 Quasar_jsww--6_compressed.webp","assets/Jordan Springs/Quasar_js-1823_compressed.webp","assets/Jordan Springs/Quasar_jsww--12_compressed.webp","assets/Jordan Springs/Quasar_jsww-_compressed.webp"]},
+      {"id":"iskcon","name":"ISKCON","loc":"217 Windsor Rd, Vineyard NSW","tag":"Community","status":"live","hook":"Design, Construction and Project Management","desc":"Projectvision is delivering the design, construction and project management for a mixed-use community facility comprising function halls, a restaurant, a prayer hall and motel accommodation. Our team led a complete design revision of the previously approved scheme, significantly enhancing the building's overall architectural presence to create a striking, meaningful facility that serves and inspires the local community.","imgs":["assets/ISKCON/00 IMG_3225_compressed.webp","assets/ISKCON/IMG_3230_compressed.webp","assets/ISKCON/IMG_3237_compressed.webp","assets/ISKCON/IMG_3239_compressed.webp"]},
+      {"id":"ilve","name":"ILVE","loc":"48-50 Moore St Leichhardt, NSW","tag":"Commercial","status":"done","hook":"Warehouse Extension & New Two-Level Showroom","desc":"Projectvision delivered an extension to ILVE's existing Leichhardt premises, including a new two-level showroom and boardroom, underground car park and warehouse upgrades. The works were carefully staged and coordinated to allow ILVE's ongoing operations to continue throughout construction.","imgs":["assets/ILVE/00 ILVE_compressed.webp","assets/ILVE/ILVE 1_compressed.webp","assets/ILVE/ILVE 2_compressed.webp","assets/ILVE/ILVE 3_compressed.webp"]},
+      {"id":"fox_studios","name":"Fox Studios","loc":"38 Driver Avenue, Moore Park, NSW","tag":"Commercial","status":"done","hook":"Demolition & Construction of Production Facilities","desc":"ProjectVision managed the demolition of the former Back Lot Eatery at Fox Studios Australia and the construction of purpose-built production facilities for a major film production. The works were delivered to a tight program while meeting the specialised requirements of an active entertainment precinct.","imgs":["assets/Fox Studios/00-Fx0029_compressed.webp","assets/Fox Studios/fox01_compressed.webp","assets/Fox Studios/fox02_compressed.webp","assets/Fox Studios/fox03_compressed.webp","assets/Fox Studios/fox04_compressed.webp","assets/Fox Studios/fox33_compressed.webp"]},
+      {"id":"greystanes_shoppinh_centre","name":"Greystanes Shopping Centre","loc":"665/699 Merrylands Rd, Greystanes NSW","tag":"Retail","status":"done","hook":"Tenancy Coordination & Retail Delivery","desc":"Projectvision coordinated the delivery of a new Woolworths supermarket and 26 speciality retail tenancies at Greystanes Shopping Centre. Our scope included authority approvals, base building interfaces and builder–tenant coordination from lease commencement through to centre opening, supporting a coordinated and on-program launch.","imgs":["assets/Greystanes Shoppinh Centre/00-Greystanes-SC-800x445_compressed.webp","assets/Greystanes Shoppinh Centre/Greystanes-Shopping-Centre_8d8dc88257f61997c11afaa787874b6f_compressed.webp","assets/Greystanes Shoppinh Centre/NSW-Greystanes-External_compressed.webp"]},
+      {"id":"concord_west_duplex","name":"Concord West Duplex","loc":"335 Queen St, Concord West NSW","tag":"Residential","status":"done","hook":"Development Management, Architecture & Construction","desc":"End-to-end delivery of a duplex development on a 610 m² site at 335 & 335A Queen St, Concord West. Completed in 2023, the project achieved a 45% return.","imgs":["assets/Concord West Duplex/00-main_compressed.webp","assets/Concord West Duplex/image10_compressed.webp","assets/Concord West Duplex/image2_compressed.webp","assets/Concord West Duplex/image3_compressed.webp","assets/Concord West Duplex/image4_compressed.webp","assets/Concord West Duplex/image5_compressed.webp","assets/Concord West Duplex/image6_compressed.webp","assets/Concord West Duplex/image7_compressed.webp","assets/Concord West Duplex/image8_compressed.webp","assets/Concord West Duplex/image9_compressed.webp"]},
+      {"id":"yoorana","name":"Yoorana","loc":"1 Yoorana Place, Castle Hill NSW","tag":"Residential","status":"done","hook":"Land Subdivision, Boundary Realignment & Development Management","desc":"Projectvision secured council approval to subdivide the site into two lots, retaining the existing residence on approximately 585 m² and creating 1A Yoorana Place. A boundary realignment was also completed to meet planning and setback requirements, unlocking additional development potential and site value. Within three months, the property's valuation increased by approximately 70%.","imgs":["assets/Yoorana/00 image_compressed.webp","assets/Yoorana/image (1)_compressed.webp","assets/Yoorana/image (2)_compressed.webp","assets/Yoorana/image (3)_compressed.webp"]},
+      {"id":"gymea_cir_rouse_hill","name":"Gymea Cir, Rouse Hill","loc":"13 Gymea Circuit, Rouse Hill NSW","tag":"Residential","status":"live","hook":"Development Management, Planning & Consultant Coordination","desc":"Projectvision managed the development planning, consultant coordination and approval process for this 2,685 m² site in Rouse Hill. The project addressed E3 zoning requirements, development controls and bushfire constraints to maximise the site's commercial development potential, achieving a 400% return on cash.","imgs":["assets/Gymea Cir, Rouse Hill/00-DJI_0241_compressed.webp","assets/Gymea Cir, Rouse Hill/DJI_0251_compressed.webp","assets/Gymea Cir, Rouse Hill/DJI_0252_compressed.webp"]},
+      {"id":"toukley","name":"Toukley","loc":"286 Main Road, Toukley, NSW","tag":"Residential","status":"done","hook":"Development Management, Architecture & Construction","desc":"Projectvision provided end-to-end development, design and construction services for a six-townhouse residential development on a 1,208 m² site. The project included DA documentation, consultant coordination, cost and construction management, and achieved a 100% return on cash.","imgs":["assets/Toukley/00 image_compressed.webp","assets/Toukley/image (1)_compressed.webp","assets/Toukley/image (2)_compressed.webp","assets/Toukley/image (3)_compressed.webp","assets/Toukley/image 2_compressed.webp"]},
+      {"id":"austral","name":"Austral","loc":"23 Tenth Avenue, Austral, NSW","tag":"Residential","status":"live","hook":"Residential Subdivision & Development Management","desc":"A residential subdivision of a 1.213 ha site into 13 residential lots, supported by new road, stormwater drainage, servicing and earthworks. The project is being progressed through the planning and approval process, with a projected 100% return on capital.","imgs":["assets/Austral/00 page_06_image_02_compressed.webp","assets/Austral/page_01_image_01_compressed.webp","assets/Austral/page_10_image_02_compressed.webp","assets/Austral/page_48_image_01_compressed.webp"]},
+      {"id":"marley_spoon_swan","name":"Marley Spoon Swan","loc":"61-63 Water Gum Dr, Jordan Springs NSW","tag":"Industrial","status":"done","hook":"Project Management","desc":"Projectvision provided project management services for the completed Marley Spoon facility in Swan, coordinating project delivery, consultants and key project stakeholders to support the successful completion of the development.","imgs":["assets/Marley Spoon Swan/00 230722-marley-spoon-centurion-place-jandakot-lg-04-768x512_compressed.webp","assets/Marley Spoon Swan/230627-marley-spoon-centurion-place-jandakot-aerial-07_compressed.webp","assets/Marley Spoon Swan/230627-marley-spoon-centurion-place-jandakot-aerial-09_compressed.webp","assets/Marley Spoon Swan/230722-marley-spoon-centurion-place-jandakot-lg-01_compressed.webp","assets/Marley Spoon Swan/230722-marley-spoon-centurion-place-jandakot-lg-05-1_compressed.webp"]},
+      {"id":"marley_spoon_wetherill_park","name":"Marley Spoon – Sydney (Wetherill Park)","loc":"300 Victoria St, WETHERILL PARK NSW","tag":"Industrial","status":"done","hook":"Project Management","desc":"ProjectVision provided full project management services for this 4,900 m² industrial facility, including design team engagement, authority management, construction tendering and builder appointment, construction management, project completion and handover to operations. The project was completed in 2021.","imgs":["assets/Marley Spoon wetherill park/00 Marley-Spoon-1440x900_compressed.webp","assets/Marley Spoon wetherill park/20210303_152106_compressed.webp","assets/Marley Spoon wetherill park/20210303_152109_compressed.webp","assets/Marley Spoon wetherill park/20210303_152126_compressed.webp","assets/Marley Spoon wetherill park/20210303_152344_compressed.webp","assets/Marley Spoon wetherill park/MarleySpoon-Warehouse-WetherillPark-NSW-17-scaled_compressed.webp"]},
+      {"id":"silverwater","name":"Silverwater","loc":"Silverwater, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+      {"id":"turton_place","name":"Turton Place","loc":"Turton Place, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+      {"id":"tamworth","name":"Tamworth","loc":"Tamworth, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
+      {"id":"238_marsden","name":"238 Marsden","loc":"238 Marsden, NSW","tag":"Residential","status":"done","hook":"","desc":"","imgs":[]},
     ];
     const bMono=this.props.bMonochrome??false;
+    this._pIds = RAW.map(p=>p.id);
     const projects=RAW.map((p,i)=>{
       const imgs=p.imgs || [1,2,3].map(n=>`assets/proj-${p.id}-${n}.jpg`);
       const img=imgs[0];
@@ -714,6 +927,16 @@ class Component extends DCLogic {
       deliverSep: isMobile ? ' ' : '\u00a0\u00b7\u00a0',
       discQuoteGap: isMobile ? '10px' : '28px',
       isMobile, isDesktop:!isMobile,
+      openRydalmere: () => this.openModal('rydalmere'),
+      openGymea: () => this.openModal('gymea_cir_rouse_hill'),
+      openSilverwater: () => this.openModal('silverwater'),
+      openTurton: () => this.openModal('turton_place'),
+      openAustral: () => this.openModal('austral'),
+      openToukley: () => this.openModal('toukley'),
+      openTamworth: () => this.openModal('tamworth'),
+      openYoorana: () => this.openModal('yoorana'),
+      openConcord: () => this.openModal('concord_west_duplex'),
+      openMarsden: () => this.openModal('238_marsden'),
       navBg: st.scrolled?'rgba(255,255,255,.97)':'rgba(9,21,43,.68)',
       navShadow: st.scrolled?'0 1px 0 #DDE4EE':'none',
       navColor: st.scrolled?'#0D1E35':'#fff',
@@ -771,7 +994,7 @@ class Component extends DCLogic {
       ],
       testimonials:TESTIMONIALS,
       disciplines:[
-        {n:'01',role:'Management',quote:'I would not hesitate in using Projectvision again and suggest that you involve them early to help avoid problems.',author:'Mark Pullen, Proprietor Cube Cafe',bd:'1px solid rgba(13,30,53,.14)',pulseDelay:'0s'},
+        {n:'01',role:'Development',quote:'Amitav’s vision maximises returns for investors…he identified a great opportunity to develop a site that not only suited our plans but created a better ROI. Rather than selling off our land, he helped us gain over 150% on its property value.',author:'Sunil Lal, General Manager, Austech Supplies',bd:'1px solid rgba(13,30,53,.14)',pulseDelay:'0s'},
         {n:'02',role:'Architecture',quote:'Excellent job working with all stakeholders and finding solution to design & construction problems.',author:'Andrew Hollander, Development Manager Woolworths',bd:'1px solid rgba(13,30,53,.14)',pulseDelay:'1.5s'},
         {n:'03',role:'Builders',quote:'It’s a pleasure to have a building completed ahead of schedule and within budget limit. Thanks for Projectvision’s great effort.',author:'Michael Harvey, CEO Fox Studios',bd:'none',pulseDelay:'3s'}
       ],
@@ -782,6 +1005,7 @@ class Component extends DCLogic {
         {v:'NSW & Interstate',l:'Across Australia',target:'',suffix:'',redTick:'transparent'}
       ],
       modal, modalOpen:!!modal, closeModal:()=>this.closeModal(), noop:(e)=>{ if(e&&e.stopPropagation) e.stopPropagation(); },
+      prevModal: (e)=>this.prevModal(e), nextModal: (e)=>this.nextModal(e),
       contactModalOpen: !!st.contactModalOpen,
       contactSubmitted: !!st.contactSubmitted,
       contactFormVisible: !st.contactSubmitted,

@@ -163,6 +163,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   [data-rv]{opacity:1 !important}
   [data-rv].pv-in{animation:none !important}
 }
+.pv-desktop-nav{display:none;align-items:center;gap:clamp(16px,2vw,32px)}
+.pv-burger-btn{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;background:none;border:none}
+@media (min-width: 880px) {
+  .pv-desktop-nav{display:flex}
+  .pv-burger-btn{display:none}
+}
 @media print{[data-pv-drawer],[data-pv-switcher]{display:none!important}#top{min-height:auto!important;height:100vh!important}}
 </style>
 </helmet>
@@ -175,7 +181,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <!-- HEADER NAV (Logo left, single hamburger right) -->
 <header style="position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 clamp(16px,4vw,52px);background:{{ navBg }};backdrop-filter:blur(24px) saturate(1.8);box-shadow:{{ navShadow }};transition:background .4s,box-shadow .4s">
   <a href="/" style="display:flex;align-items:center;line-height:1"><img src="assets/logo.png" alt="Project Vision" width="200" height="38" style="height:clamp(32px,2.8vw,38px);width:auto;display:block"></a>
-  <button onClick="{{ toggleDrawer }}" aria-label="Open menu" style="flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:8px;background:none;border:none">
+  <nav class="pv-desktop-nav" aria-label="Main Navigation">
+    <a href="/about" style="font-size:14px;font-weight:600;letter-spacing:.02em;color:{{ navColor }};transition:color .2s" style-hover="color:#1B6FE4">About</a>
+    <a href="/capabilities" style="font-size:14px;font-weight:700;letter-spacing:.02em;color:#1B6FE4">Capabilities</a>
+    <a href="/#projects" style="font-size:14px;font-weight:600;letter-spacing:.02em;color:{{ navColor }};transition:color .2s" style-hover="color:#1B6FE4">Projects</a>
+    <button onClick="{{ openContactModal }}" style="font-size:14px;font-weight:600;letter-spacing:.02em;color:{{ navColor }};transition:color .2s;background:none;border:none;padding:0;cursor:pointer" style-hover="color:#1B6FE4">Contact</button>
+    <button onClick="{{ openContactModal }}" style="display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 18px;border-radius:6px;background:{{ navBtnBg }};border:1px solid {{ navBtnBd }};color:{{ navBtnColor }};font-size:13px;font-weight:700;letter-spacing:.01em;white-space:nowrap;transition:all .25s" style-hover="background:#1B6FE4;border-color:#1B6FE4;color:#fff;transform:translateY(-1px)">Get in Touch →</button>
+  </nav>
+  <button class="pv-burger-btn" onClick="{{ toggleDrawer }}" aria-label="Open menu">
     <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};transform:{{ hbTop }};transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s"></span>
     <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};opacity:{{ hbMid }};transition:opacity .2s,background .35s"></span>
     <span style="display:block;width:22px;height:1.8px;border-radius:2px;background:{{ hbColor }};transform:{{ hbBot }};transition:transform .35s cubic-bezier(.16,1,.3,1),background .35s"></span>
@@ -483,6 +496,9 @@ class Component extends DCLogic {
       navBg: st.scrolled?'rgba(255,255,255,.97)':'rgba(9,21,43,.68)',
       navShadow: st.scrolled?'0 1px 0 #DDE4EE':'none',
       navColor: st.scrolled?'#0D1E35':'#fff',
+      navBtnBg: st.scrolled?'#1B6FE4':'rgba(255,255,255,.14)',
+      navBtnBd: st.scrolled?'#1B6FE4':'rgba(255,255,255,.35)',
+      navBtnColor: '#fff',
       hbColor: st.drawer?'#0D1E35':(st.scrolled?'#0D1E35':'rgba(255,255,255,.92)'),
       hbTop: st.drawer?'translateY(6.8px) rotate(45deg)':'translateY(0) rotate(0deg)',
       hbMid: st.drawer?'0':'1',
